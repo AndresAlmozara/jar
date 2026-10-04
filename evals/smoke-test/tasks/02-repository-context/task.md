@@ -1,0 +1,1 @@
+Correct weekly activity aggregation so each event is assigned to its local calendar day using its explicit timezone offset. Preserve the repository convention that an unavailable duration produces null rather than zero, including zero-distance activities. The obvious weekly service is not the only source of these rules. Add regression coverage and run public tests.

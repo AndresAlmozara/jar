@@ -1,0 +1,1 @@
+export class ImportStore {constructor(){this.records=[];this.keys=new Set();}has(k){return this.keys.has(k);}commit(k,data){this.keys.add(k);const id='r'+(this.records.length+1);this.records.push({id,data});return id;}}

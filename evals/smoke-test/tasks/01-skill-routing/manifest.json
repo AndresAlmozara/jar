@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "jar.owned-workspace.v1",
+  "id": "01-skill-routing",
+  "sourceRoot": "workspace",
+  "task": "Fix the concurrent OAuth session refresh regression while preserving the public SessionManager API and AuthRefreshError semantics. Concurrent expired-session requests must share exactly one refresh, a failed refresh must reject every waiter without erasing the last usable session, a later request must be able to retry, and meaningful regression coverage must be added. Run the public tests and avoid unrelated changes.",
+  "include": [
+    "package.json",
+    "public-test.mjs",
+    "src/distractors/identity-adjacent-01.js",
+    "src/distractors/identity-adjacent-02.js",
+    "src/distractors/identity-adjacent-03.js",
+    "src/distractors/identity-adjacent-04.js",
+    "src/distractors/identity-adjacent-05.js",
+    "src/distractors/identity-adjacent-06.js",
+    "src/distractors/identity-adjacent-07.js",
+    "src/distractors/identity-adjacent-08.js",
+    "src/distractors/identity-adjacent-09.js",
+    "src/distractors/identity-adjacent-10.js",
+    "src/distractors/identity-adjacent-11.js",
+    "src/distractors/identity-adjacent-12.js",
+    "src/distractors/identity-adjacent-13.js",
+    "src/distractors/identity-adjacent-14.js",
+    "src/identity/errors.js",
+    "src/identity/session-manager.js",
+    "src/identity/session-store.js",
+    "tests/session-manager.test.mjs"
+  ],
+  "exclude": [
+    ".git",
+    ".jar",
+    "node_modules",
+    "coverage",
+    "dist",
+    "build"
+  ],
+  "immutable": [
+    "package.json",
+    "public-test.mjs"
+  ],
+  "limits": {
+    "maxFiles": 200,
+    "maxFileBytes": 65536,
+    "maxTotalBytes": 4194304
+  },
+  "commands": {
+    "test": {
+      "argv": [
+        "node",
+        "public-test.mjs"
+      ],
+      "timeoutMs": 15000,
+      "maxOutputBytes": 8192
+    }
+  },
+  "surfaces": [
+    "capabilities",
+    "skills"
+  ],
+  "capabilityProfile": "smoke-expanded",
+  "verifier": {
+    "root": "verifier",
+    "entrypoint": "verify.mjs"
+  }
+}

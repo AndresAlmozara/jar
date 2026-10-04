@@ -1,0 +1,1 @@
+import {receipt} from './receipt.js';export class ImportPipeline {constructor({sessions,store,send}){this.sessions=sessions;this.store=store;this.send=send;}async execute(operationKey,payload){const session=await this.sessions.get();const data=await this.send(session,payload);const id=this.store.commit(operationKey,data);return receipt(operationKey,'committed',id);}}

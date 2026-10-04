@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict';import {mergeConfig} from './src/config/merge.js';assert.equal(mergeConfig({enabled:true},{enabled:true}).enabled,true);assert.throws(()=>mergeConfig({}, {unknown:1}),/UNKNOWN_CONFIG_KEY/);console.log('config public tests passed');

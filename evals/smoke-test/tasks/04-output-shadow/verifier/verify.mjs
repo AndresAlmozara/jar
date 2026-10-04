@@ -1,0 +1,4 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {pathToFileURL} from 'node:url';
+const ws=path.resolve(process.argv[2]);let phase='public_tests';const run=async f=>await import(pathToFileURL(path.join(ws,f)).href+'?v='+Date.now());
+try{await run('public-test.mjs');phase='hidden_checks';const {summarize}=await run('src/log/summary.js');assert.deepEqual(summarize(['INFO 1','ERROR E_CONN first','WARN retry=yes','ERROR E_OTHER later','WARN retry=no','ARTIFACT artifacts/result.json']),{errorCode:'E_CONN',retry:'no',artifact:'artifacts/result.json'});
+ console.log(JSON.stringify({pass:true,kind:'functional',phase,publicTests:{exitCode:0},hidden:{exitCode:0}}));}catch(error){console.log(JSON.stringify({pass:false,kind:'functional',phase,error:String(error.message),publicTests:{exitCode:phase==='public_tests'?1:0},hidden:{exitCode:phase==='hidden_checks'?1:null}}));process.exitCode=1;}

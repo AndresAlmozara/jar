@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "m11.runtime-preflight-expectations.v1",
+  "sourceCommit": "0d9c7cbfa6cf1489f55a8a9542b75ddd2c061807",
+  "runtimeVersion": "0.158.0-alpha.2.1",
+  "cwd": "C:\\M11\\work\\project",
+  "expectedModel": "m11-synthetic-direct",
+  "expectedConfigDocument": "C:\\M11\\work\\review\\configuration-review.json",
+  "threadInputsDocument": "C:\\M11\\work\\frozen\\thread-inputs.json",
+  "codexArgs": [
+    "-c",
+    "cli_auth_credentials_store=\"ephemeral\"",
+    "app-server",
+    "--stdio",
+    "--strict-config"
+  ],
+  "initializeParams": {
+    "clientInfo": {
+      "name": "m11-runtime-preflight",
+      "title": "M11 runtime preflight",
+      "version": "1.0.0"
+    },
+    "capabilities": {
+      "experimentalApi": true
+    }
+  },
+  "stopBarrier": "After successful baseline and filtered thread/start responses; before any turn/start request is constructed or sent",
+  "forbiddenMethods": [
+    "turn/start",
+    "review/start",
+    "thread/compact/start",
+    "thread/shellCommand"
+  ],
+  "runtimeCaptureAuthorized": false
+}

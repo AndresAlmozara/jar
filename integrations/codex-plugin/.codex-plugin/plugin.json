@@ -1,0 +1,11 @@
+{
+  "name": "jar-v1-codex",
+  "version": "1.0.2",
+  "description": "Always-on JAR V1 routing for ordinary Codex sessions.",
+  "hooks": "./hooks/hooks.json",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "JAR — JEV Agentic Router",
+    "shortDescription": "Canonical JAR V1 routing for every Codex repository"
+  }
+}

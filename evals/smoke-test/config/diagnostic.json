@@ -1,0 +1,48 @@
+{
+  "schema_version": "jar.smoke-benchmark.v1",
+  "experiment_id": "jar-integrated-smoke-test",
+  "model": "auto",
+  "effort": "medium",
+  "tasks": [
+    {
+      "task_id": "01-skill-routing",
+      "focus": "SKILL_ROUTING",
+      "order": "CONTROL_FIRST"
+    },
+    {
+      "task_id": "02-repository-context",
+      "focus": "REPOSITORY_CONTEXT",
+      "order": "JAR_FIRST"
+    },
+    {
+      "task_id": "03-capability-exposure",
+      "focus": "CAPABILITY_EXPOSURE",
+      "order": "CONTROL_FIRST"
+    },
+    {
+      "task_id": "04-output-shadow",
+      "focus": "FRESH_OUTPUT_FILTERING_SHADOW",
+      "order": "JAR_FIRST"
+    },
+    {
+      "task_id": "05-integrated",
+      "focus": "INTEGRATED_CURRENT_JAR",
+      "order": "CONTROL_FIRST"
+    }
+  ],
+  "notes": [
+    "Tasks 01/02 are attribution diagnostics, not isolated ablations; inspect M8 confounding.",
+    "Task 04 is explicitly shadow-only because current live V1 does not actively filter delivered tool output.",
+    "Task 05 measures current integrated JAR synergy: skills + context + capability routing; output remains shadow/passthrough.",
+    "Main-model token usage is UNKNOWN unless runtime exposes it; never proxy characters as tokens.",
+    "The current account model catalog is queried with JAR OAuth. A listed Sol is preferred; no model ids are assumed available.",
+    "No extra real inference probe. Executor startup is lazy on first dynamic-tool call; all 10 benchmark conditions still use one real turn each.",
+    "The tool wait bound includes first Sandbox startup. Actual workspace commands retain JAR limits."
+  ],
+  "timeouts": {
+    "model_ms": 600000,
+    "rpc_ms": 30000,
+    "tool_ms": 240000
+  },
+  "compatibility_adapter": "noul-string-criteria-to-true-object-v1"
+}

@@ -1,0 +1,1 @@
+import {localDay} from '../time/local-day.js';import {durationPerKm} from '../domain/activity-duration.js';export function weeklySummary(events){const days={};for(const e of events){const day=localDay(e.startedAt,e.offsetMinutes);const value=durationPerKm(e.durationSeconds,e.distanceMeters)??0;days[day]=(days[day]??0)+value;}return days;}

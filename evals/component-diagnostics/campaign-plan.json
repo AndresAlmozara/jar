@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "jar.component-diagnostics.campaign-plan-manifest.v1",
+  "planId": "m6-m8-permanent-product-plan-v1",
+  "generatedPlanHash": "b90c3db04cf96b2c33e0792b2d7a3e4cd50c3d57240fd50398508ffe15801153",
+  "r2Disposition": "QUALIFIED",
+  "plannedValidSlots": 36,
+  "referenceV1Slots": 16,
+  "m8": {"families": ["m8-cache", "m8-redaction"], "conditions": ["HIGH_CLOSURE_WIDE_INVENTORY", "LOW_CLOSURE_WIDE_INVENTORY", "HIGH_CLOSURE_NARROW_INVENTORY"], "arms": ["REFERENCE_V1", "M8_OPERATIONAL_R1"], "repetitions": 2, "slots": 24},
+  "m6": {"families": ["m6-retry", "m6-merge"], "arms": ["REFERENCE_V1", "M6_RECALL_R1", "M6_EVIDENCE_R2"], "repetitions": 2, "slots": 12},
+  "limits": {"absoluteStartedProductTurns": 40, "maximumInfrastructureReplacements": 4, "replacementPerSlot": 1, "phase2JevAttempts": 900, "phase2JevInputTokens": 6000000, "jointJevAttempts": 1500, "jointJevInputTokens": 10000000},
+  "execution": {"sequential": true, "order": "seeded counterbalanced in plan.mjs", "reserveBeforeDispatch": true, "countEveryStartedTurn": true}
+}

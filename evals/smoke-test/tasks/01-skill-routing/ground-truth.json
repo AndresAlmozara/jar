@@ -1,0 +1,56 @@
+{
+  "skills": {
+    "required": [
+      "oauth-security",
+      "async-concurrency",
+      "tdd-workflow"
+    ],
+    "acceptable": [
+      "api-compatibility",
+      "error-handling"
+    ],
+    "distractors": [
+      "logging",
+      "caching",
+      "performance-profiling",
+      "schema-design",
+      "database-migrations",
+      "frontend-accessibility",
+      "react-state",
+      "cli-design",
+      "deployment",
+      "localization",
+      "documentation",
+      "idempotency",
+      "retry-policy"
+    ]
+  },
+  "context": {
+    "core": [
+      "src/identity/session-manager.js",
+      "src/identity/errors.js"
+    ],
+    "supporting": [
+      "tests/session-manager.test.mjs"
+    ]
+  },
+  "capabilities": {
+    "required": [
+      "workspace_read",
+      "workspace_write",
+      "workspace_run"
+    ],
+    "acceptable": [
+      "workspace_search",
+      "test_inventory",
+      "api_contract_inspect"
+    ],
+    "distractors": [
+      "asset_inspect",
+      "frontend_snapshot",
+      "localization_inspect",
+      "migration_inspect",
+      "release_metadata"
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "jar.owned-workspace.v1",
+  "id": "05-integrated",
+  "sourceRoot": "workspace",
+  "task": "Repair the import pipeline across session refresh, retry, and idempotency boundaries. Concurrent expired-session imports must share one refresh; retries of the same operation key must not duplicate committed records; failed attempts must remain retryable; the persisted receipt schema and public API must remain backward compatible; preserve repository error conventions and add meaningful regression coverage. Run public tests and avoid unrelated changes.",
+  "include": [
+    "package.json",
+    "public-test.mjs",
+    "src/distractors/integrated-file-01.js",
+    "src/distractors/integrated-file-02.js",
+    "src/distractors/integrated-file-03.js",
+    "src/distractors/integrated-file-04.js",
+    "src/distractors/integrated-file-05.js",
+    "src/distractors/integrated-file-06.js",
+    "src/distractors/integrated-file-07.js",
+    "src/distractors/integrated-file-08.js",
+    "src/distractors/integrated-file-09.js",
+    "src/distractors/integrated-file-10.js",
+    "src/distractors/integrated-file-11.js",
+    "src/distractors/integrated-file-12.js",
+    "src/distractors/integrated-file-13.js",
+    "src/distractors/integrated-file-14.js",
+    "src/distractors/integrated-file-15.js",
+    "src/distractors/integrated-file-16.js",
+    "src/distractors/integrated-file-17.js",
+    "src/distractors/integrated-file-18.js",
+    "src/distractors/integrated-file-19.js",
+    "src/distractors/integrated-file-20.js",
+    "src/distractors/integrated-file-21.js",
+    "src/distractors/integrated-file-22.js",
+    "src/distractors/integrated-file-23.js",
+    "src/distractors/integrated-file-24.js",
+    "src/distractors/integrated-file-25.js",
+    "src/distractors/integrated-file-26.js",
+    "src/distractors/integrated-file-27.js",
+    "src/distractors/integrated-file-28.js",
+    "src/distractors/integrated-file-29.js",
+    "src/distractors/integrated-file-30.js",
+    "src/distractors/integrated-file-31.js",
+    "src/distractors/integrated-file-32.js",
+    "src/distractors/integrated-file-33.js",
+    "src/distractors/integrated-file-34.js",
+    "src/distractors/integrated-file-35.js",
+    "src/distractors/integrated-file-36.js",
+    "src/distractors/integrated-file-37.js",
+    "src/distractors/integrated-file-38.js",
+    "src/distractors/integrated-file-39.js",
+    "src/distractors/integrated-file-40.js",
+    "src/distractors/integrated-file-41.js",
+    "src/distractors/integrated-file-42.js",
+    "src/distractors/integrated-file-43.js",
+    "src/distractors/integrated-file-44.js",
+    "src/distractors/integrated-file-45.js",
+    "src/distractors/integrated-file-46.js",
+    "src/distractors/integrated-file-47.js",
+    "src/distractors/integrated-file-48.js",
+    "src/distractors/integrated-file-49.js",
+    "src/distractors/integrated-file-50.js",
+    "src/distractors/integrated-file-51.js",
+    "src/distractors/integrated-file-52.js",
+    "src/distractors/integrated-file-53.js",
+    "src/distractors/integrated-file-54.js",
+    "src/distractors/integrated-file-55.js",
+    "src/identity/errors.js",
+    "src/identity/session.js",
+    "src/import/pipeline.js",
+    "src/import/receipt.js",
+    "src/import/store.js",
+    "tests/import-pipeline.test.mjs"
+  ],
+  "exclude": [
+    ".git",
+    ".jar",
+    "node_modules",
+    "coverage",
+    "dist",
+    "build"
+  ],
+  "immutable": [
+    "package.json",
+    "public-test.mjs"
+  ],
+  "limits": {
+    "maxFiles": 200,
+    "maxFileBytes": 65536,
+    "maxTotalBytes": 4194304
+  },
+  "commands": {
+    "test": {
+      "argv": [
+        "node",
+        "public-test.mjs"
+      ],
+      "timeoutMs": 15000,
+      "maxOutputBytes": 8192
+    }
+  },
+  "surfaces": [
+    "capabilities",
+    "skills",
+    "context",
+    "output-shadow"
+  ],
+  "capabilityProfile": "smoke-expanded",
+  "verifier": {
+    "root": "verifier",
+    "entrypoint": "verify.mjs"
+  }
+}

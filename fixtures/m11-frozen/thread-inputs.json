@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "m11.synthetic-thread-inputs.v1",
+  "status": "STATIC_INPUTS_NOT_A_DRIVER_OR_LAUNCH_PACKAGE",
+  "runtimeCaptureAuthorized": false,
+  "threadStartCommon": {
+    "model": "m11-synthetic-direct",
+    "modelProvider": "m11_loopback",
+    "allowProviderModelFallback": false,
+    "cwd": "C:\\M11\\work\\project",
+    "ephemeral": true,
+    "environments": [],
+    "selectedCapabilityRoots": [],
+    "config": {}
+  },
+  "baselineDynamicTools": [
+    {
+      "type": "function",
+      "name": "tool_alpha",
+      "description": "Synthetic M11 alpha metadata-only tool. Never execute.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "deferLoading": false
+    },
+    {
+      "type": "function",
+      "name": "tool_beta",
+      "description": "Synthetic M11 beta metadata-only tool. Never execute.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "deferLoading": false
+    },
+    {
+      "type": "function",
+      "name": "tool_gamma",
+      "description": "Synthetic M11 gamma metadata-only tool. Never execute.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "deferLoading": false
+    }
+  ],
+  "filteredDynamicTools": [
+    {
+      "type": "function",
+      "name": "tool_alpha",
+      "description": "Synthetic M11 alpha metadata-only tool. Never execute.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "deferLoading": false
+    },
+    {
+      "type": "function",
+      "name": "tool_gamma",
+      "description": "Synthetic M11 gamma metadata-only tool. Never execute.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "deferLoading": false
+    }
+  ],
+  "expectedBuiltins": [],
+  "inventoryBasis": "Pinned source predicates under frozen config and empty external contributors; NOT a guest-observed tool inventory",
+  "syntheticUserText": "M11 synthetic initial request. Do not call any tool.",
+  "forbiddenOperations": [
+    "resume",
+    "fork",
+    "tool invocation",
+    "arbitrary config overrides",
+    "capability selection",
+    "provider fallback",
+    "model request during preflight"
+  ],
+  "missing": "No executable protocol driver, runtime metadata binding, receipt or admission"
+}

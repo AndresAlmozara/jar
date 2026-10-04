@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "components": [
+    {
+      "id": "capability:database",
+      "family": "capability",
+      "description": "Database, schema and persistence guidance.",
+      "modules": [
+        "database"
+      ]
+    },
+    {
+      "id": "lang:typescript",
+      "family": "language",
+      "description": "TypeScript engineering guidance.",
+      "modules": [
+        "framework-language"
+      ]
+    }
+  ]
+}

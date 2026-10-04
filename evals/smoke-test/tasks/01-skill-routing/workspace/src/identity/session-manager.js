@@ -1,0 +1,2 @@
+import {AuthRefreshError} from './errors.js';
+export class SessionManager {constructor({refresh,now=()=>Date.now()}){this.refresh=refresh;this.now=now;this.session=null;}setSession(value){this.session=value;}getSession(){return this.session;}async usableSession(){if(this.session&&this.session.expiresAt>this.now()+1000)return this.session;try{this.session=await this.refresh(this.session?.refreshToken);return this.session;}catch(cause){this.session=null;throw new AuthRefreshError('refresh failed',{cause});}}}

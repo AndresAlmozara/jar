@@ -1,0 +1,2 @@
+import{describe,it,expect}from'vitest';import React from'react';import{renderToStaticMarkup}from'react-dom/server';import App from'../src/App';
+describe('product interface',()=>{it('server-renders the accessible workflow shell',()=>{const html=renderToStaticMarkup(React.createElement(App));expect(html).toMatch(/<main/);expect(html).toMatch(/<form/);expect(html).toMatch(/<label/);expect(html).toMatch(/search/i);expect(html).toMatch(/aria-live/)})});

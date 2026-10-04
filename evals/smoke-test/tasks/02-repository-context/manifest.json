@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "jar.owned-workspace.v1",
+  "id": "02-repository-context",
+  "sourceRoot": "workspace",
+  "task": "Correct weekly activity aggregation so each event is assigned to its local calendar day using its explicit timezone offset. Preserve the repository convention that an unavailable duration produces null rather than zero, including zero-distance activities. The obvious weekly service is not the only source of these rules. Add regression coverage and run public tests.",
+  "include": [
+    "package.json",
+    "public-test.mjs",
+    "src/distractors/repository-file-01.js",
+    "src/distractors/repository-file-02.js",
+    "src/distractors/repository-file-03.js",
+    "src/distractors/repository-file-04.js",
+    "src/distractors/repository-file-05.js",
+    "src/distractors/repository-file-06.js",
+    "src/distractors/repository-file-07.js",
+    "src/distractors/repository-file-08.js",
+    "src/distractors/repository-file-09.js",
+    "src/distractors/repository-file-10.js",
+    "src/distractors/repository-file-11.js",
+    "src/distractors/repository-file-12.js",
+    "src/distractors/repository-file-13.js",
+    "src/distractors/repository-file-14.js",
+    "src/distractors/repository-file-15.js",
+    "src/distractors/repository-file-16.js",
+    "src/distractors/repository-file-17.js",
+    "src/distractors/repository-file-18.js",
+    "src/distractors/repository-file-19.js",
+    "src/distractors/repository-file-20.js",
+    "src/distractors/repository-file-21.js",
+    "src/distractors/repository-file-22.js",
+    "src/distractors/repository-file-23.js",
+    "src/distractors/repository-file-24.js",
+    "src/distractors/repository-file-25.js",
+    "src/distractors/repository-file-26.js",
+    "src/distractors/repository-file-27.js",
+    "src/distractors/repository-file-28.js",
+    "src/distractors/repository-file-29.js",
+    "src/distractors/repository-file-30.js",
+    "src/distractors/repository-file-31.js",
+    "src/distractors/repository-file-32.js",
+    "src/distractors/repository-file-33.js",
+    "src/distractors/repository-file-34.js",
+    "src/distractors/repository-file-35.js",
+    "src/distractors/repository-file-36.js",
+    "src/distractors/repository-file-37.js",
+    "src/distractors/repository-file-38.js",
+    "src/distractors/repository-file-39.js",
+    "src/distractors/repository-file-40.js",
+    "src/distractors/repository-file-41.js",
+    "src/distractors/repository-file-42.js",
+    "src/distractors/repository-file-43.js",
+    "src/distractors/repository-file-44.js",
+    "src/distractors/repository-file-45.js",
+    "src/distractors/repository-file-46.js",
+    "src/distractors/repository-file-47.js",
+    "src/distractors/repository-file-48.js",
+    "src/distractors/repository-file-49.js",
+    "src/distractors/repository-file-50.js",
+    "src/domain/activity-duration.js",
+    "src/domain/unavailable.js",
+    "src/services/weekly-summary.js",
+    "src/time/local-day.js",
+    "tests/weekly-summary.test.mjs"
+  ],
+  "exclude": [
+    ".git",
+    ".jar",
+    "node_modules",
+    "coverage",
+    "dist",
+    "build"
+  ],
+  "immutable": [
+    "package.json",
+    "public-test.mjs"
+  ],
+  "limits": {
+    "maxFiles": 200,
+    "maxFileBytes": 65536,
+    "maxTotalBytes": 4194304
+  },
+  "commands": {
+    "test": {
+      "argv": [
+        "node",
+        "public-test.mjs"
+      ],
+      "timeoutMs": 15000,
+      "maxOutputBytes": 8192
+    }
+  },
+  "surfaces": [
+    "capabilities",
+    "context"
+  ],
+  "capabilityProfile": "smoke-expanded",
+  "verifier": {
+    "root": "verifier",
+    "entrypoint": "verify.mjs"
+  }
+}

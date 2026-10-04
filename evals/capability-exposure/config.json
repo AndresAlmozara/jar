@@ -1,0 +1,26 @@
+{
+  "version": "capability.eval.v1",
+  "frozenBeforeExecution": true,
+  "evidence": "E2 synthetic",
+  "limits": {
+    "maxCandidates": 6,
+    "maxCalls": 6,
+    "retainThreshold": 0.15,
+    "maxTaskChars": 8000,
+    "maxCandidateChars": 4000
+  },
+  "liveCaseIds": [
+    "bug",
+    "explicit-browser",
+    "multi-capability"
+  ],
+  "liveMaxCalls": 18,
+  "successCriteria": [
+    "All arms remain shadow-only",
+    "Policy violations zero",
+    "Unknown metrics null",
+    "Mock replay stable",
+    "Provider failure restores every eligible ID"
+  ],
+  "qualityPolicy": "Report recall and false exclusions without tuning, promotion, or a winner."
+}

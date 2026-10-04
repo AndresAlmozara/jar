@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "jar.generational-mechanism-gold.v1",
+  "labels": [
+    {"id": "m5-primary-database", "module": "M5", "primarySkill": "database-migrations", "acceptablePrimarySkills": ["database-migrations"], "requiredSupportingSkills": [], "allowedSupportingSkills": ["testing"], "abstained": false, "requiredCandidateSkills": ["database-migrations"]},
+    {"id": "m5-primary-database-paraphrase", "module": "M5", "primarySkill": "database-migrations", "acceptablePrimarySkills": ["database-migrations"], "requiredSupportingSkills": [], "allowedSupportingSkills": ["testing"], "abstained": false, "requiredCandidateSkills": ["database-migrations"]},
+    {"id": "m5-no-skill", "module": "M5", "primarySkill": null, "acceptablePrimarySkills": [], "requiredSupportingSkills": [], "allowedSupportingSkills": [], "abstained": true, "requiredCandidateSkills": []},
+    {"id": "m5-primary-with-support", "module": "M5", "primarySkill": "database-migrations", "acceptablePrimarySkills": ["database-migrations"], "requiredSupportingSkills": ["testing"], "allowedSupportingSkills": ["testing"], "abstained": false, "requiredCandidateSkills": ["database-migrations", "testing"]},
+    {"id": "m5-redundant-support", "module": "M5", "primarySkill": "documentation", "acceptablePrimarySkills": ["documentation"], "requiredSupportingSkills": [], "allowedSupportingSkills": [], "abstained": false, "requiredCandidateSkills": ["documentation"]},
+    {"id": "m5-ambiguous-security", "module": "M5", "primarySkill": "security-review", "acceptablePrimarySkills": ["security-review"], "requiredSupportingSkills": ["testing"], "allowedSupportingSkills": ["testing", "observability"], "abstained": false, "requiredCandidateSkills": ["security-review", "testing"]},
+    {"id": "m5-explicit-skills", "module": "M5", "primarySkill": null, "acceptablePrimarySkills": [], "requiredSupportingSkills": [], "allowedSupportingSkills": [], "explicitSkills": ["security-review", "testing"], "abstained": false, "requiredCandidateSkills": ["security-review", "testing"]},
+    {"id": "m5-accessibility", "module": "M5", "primarySkill": "frontend-accessibility", "acceptablePrimarySkills": ["frontend-accessibility"], "requiredSupportingSkills": [], "allowedSupportingSkills": ["testing"], "abstained": false, "requiredCandidateSkills": ["frontend-accessibility"]},
+
+    {"id": "m6-direct-retry", "module": "M6", "requiredCandidates": ["src/retry.js", "tests/retry.test.js"], "acceptableSelectedSets": [["src/retry.js", "tests/retry.test.js"], ["src/retry.js"]], "requiredMaterialized": ["src/retry.js"]},
+    {"id": "m6-behavior-paraphrase", "module": "M6", "requiredCandidates": ["src/retry.js"], "acceptableSelectedSets": [["src/retry.js"]], "requiredMaterialized": ["src/retry.js"]},
+    {"id": "m6-low-overlap", "module": "M6", "requiredCandidates": ["src/retry.js"], "acceptableSelectedSets": [["src/retry.js"]], "requiredMaterialized": ["src/retry.js"]},
+    {"id": "m6-settlement", "module": "M6", "requiredCandidates": ["docs/settlement.md", "src/ledger.js"], "acceptableSelectedSets": [["docs/settlement.md", "src/ledger.js"], ["src/ledger.js"]], "requiredMaterialized": ["src/ledger.js"]},
+    {"id": "m6-complementary-evidence", "module": "M6", "requiredCandidates": ["src/retry.js", "tests/retry.test.js"], "acceptableSelectedSets": [["src/retry.js", "tests/retry.test.js"]], "requiredMaterialized": ["src/retry.js", "tests/retry.test.js"]},
+    {"id": "m6-config-evidence", "module": "M6", "requiredCandidates": ["config/retry.json"], "acceptableSelectedSets": [["config/retry.json"], ["config/retry.json", "src/retry.js"]], "requiredMaterialized": ["config/retry.json"]},
+    {"id": "m6-irrelevant", "module": "M6", "requiredCandidates": [], "acceptableSelectedSets": [[]], "requiredMaterialized": []},
+    {"id": "m6-duplicate-saturation", "module": "M6", "requiredCandidates": ["src/retry.js"], "acceptableSelectedSets": [["src/retry.js"]], "requiredMaterialized": ["src/retry.js"], "maximumSemanticDuplicates": 1},
+
+    {"id": "m7-byte-exact", "module": "M7", "requiredProperties": ["BYTE_EXACT", "ORDER_PRESERVED", "NO_CAUSAL_MUTATION"]},
+    {"id": "m7-order-and-error", "module": "M7", "requiredProperties": ["BYTE_EXACT", "ORDER_PRESERVED", "CRITICAL_EVIDENCE_PRESERVED", "NO_CAUSAL_MUTATION"]},
+    {"id": "m7-empty", "module": "M7", "requiredProperties": ["BYTE_EXACT", "NO_CAUSAL_MUTATION"]},
+    {"id": "m7-unicode", "module": "M7", "requiredProperties": ["BYTE_EXACT", "ORDER_PRESERVED", "NO_CAUSAL_MUTATION"]},
+
+    {"id": "m8-read-only", "module": "M8", "semanticObligations": ["workspace.inspect"], "sufficientSets": [["read"]], "indispensable": ["read"], "policyForbidden": [], "invalidSets": [["history"], ["write"]]},
+    {"id": "m8-execute-not-history", "module": "M8", "semanticObligations": ["verification.tests.executed"], "sufficientSets": [["run"]], "indispensable": ["run"], "policyForbidden": [], "invalidSets": [["history"], ["read"]]},
+    {"id": "m8-prerequisite", "module": "M8", "semanticObligations": ["workspace.modify"], "sufficientSets": [["read", "write"]], "indispensable": ["read", "write"], "policyForbidden": [], "invalidSets": [["write"]]},
+    {"id": "m8-alternative-sets", "module": "M8", "semanticObligations": ["workspace.modify"], "sufficientSets": [["patch"], ["write"]], "indispensable": [], "policyForbidden": [], "invalidSets": [["read"]]},
+    {"id": "m8-scope", "module": "M8", "semanticObligations": ["workspace.modify"], "sufficientSets": [["write-a"]], "indispensable": ["write-a"], "policyForbidden": [], "invalidSets": [["write-b"]]},
+    {"id": "m8-denied", "module": "M8", "semanticObligations": ["workspace.inspect"], "sufficientSets": [["read"]], "indispensable": ["read"], "policyForbidden": ["remote-read"], "invalidSets": [["remote-read"]]},
+    {"id": "m8-unknown-contract", "module": "M8", "semanticObligations": ["workspace.inspect"], "sufficientSets": [["read"]], "indispensable": ["read"], "policyForbidden": [], "invalidSets": [["opaque"]], "unknownMustFailWide": true},
+    {"id": "m8-mandatory", "module": "M8", "semanticObligations": ["verification.tests.executed"], "sufficientSets": [["audit", "run"]], "indispensable": ["audit", "run"], "policyForbidden": [], "invalidSets": [["run"], ["history"]]}
+  ]
+}

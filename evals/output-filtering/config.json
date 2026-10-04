@@ -1,0 +1,10 @@
+{
+  "version": "output.eval.v1",
+  "frozenBeforeExecution": true,
+  "limits": {"minChars": 3000, "maxSegmentChars": 1500, "maxSegments": 64},
+  "semanticLimits": {"maxCandidates": 6, "maxCalls": 6, "maxTaskChars": 2000, "dropBelow": 0.1},
+  "archive": {"maxEntries": 32, "maxChars": 1000000},
+  "liveCaseIds": ["concise", "progress", "warning"],
+  "liveMaxCalls": 20,
+  "offlineJudge": "pure-numeric-progress-only-v1"
+}

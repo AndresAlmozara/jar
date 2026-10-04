@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "m11.runtime-capture-plan.v1",
+  "mode": "filtered",
+  "dynamicToolsKey": "filteredDynamicTools",
+  "expected": {"tool_alpha":"PRESENT","tool_beta":"ABSENT","tool_gamma":"PRESENT"},
+  "expectedBuiltins": [],
+  "outputFile": "m11-filtered-capture.json"
+}

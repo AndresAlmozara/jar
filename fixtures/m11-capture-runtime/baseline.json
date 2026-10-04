@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "m11.runtime-capture-plan.v1",
+  "mode": "baseline",
+  "dynamicToolsKey": "baselineDynamicTools",
+  "expected": {"tool_alpha":"PRESENT","tool_beta":"PRESENT","tool_gamma":"PRESENT"},
+  "expectedBuiltins": [],
+  "outputFile": "m11-baseline-capture.json"
+}

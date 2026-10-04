@@ -1,0 +1,63 @@
+{
+  "skills": {
+    "required": [
+      "oauth-security",
+      "async-concurrency",
+      "idempotency",
+      "tdd-workflow"
+    ],
+    "acceptable": [
+      "api-compatibility",
+      "error-handling",
+      "retry-policy"
+    ],
+    "distractors": [
+      "logging",
+      "caching",
+      "performance-profiling",
+      "schema-design",
+      "database-migrations",
+      "frontend-accessibility",
+      "react-state",
+      "cli-design",
+      "deployment",
+      "localization",
+      "documentation"
+    ]
+  },
+  "context": {
+    "core": [
+      "src/identity/session.js",
+      "src/import/pipeline.js",
+      "src/import/store.js",
+      "src/import/receipt.js",
+      "src/identity/errors.js"
+    ],
+    "supporting": [
+      "tests/import-pipeline.test.mjs"
+    ]
+  },
+  "capabilities": {
+    "required": [
+      "workspace_read",
+      "workspace_write",
+      "workspace_run",
+      "api_contract_inspect"
+    ],
+    "acceptable": [
+      "workspace_search",
+      "dependency_graph",
+      "test_inventory",
+      "source_outline",
+      "schema_inspect"
+    ],
+    "distractors": [
+      "asset_inspect",
+      "frontend_snapshot",
+      "localization_inspect",
+      "migration_inspect",
+      "release_metadata",
+      "coverage_read"
+    ]
+  }
+}

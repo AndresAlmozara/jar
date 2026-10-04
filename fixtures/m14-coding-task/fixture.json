@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "m14.coding-fixture.v1",
+  "id": "m14-add-function-v1",
+  "task": "Read source, edit and write implementation, run test verifier.",
+  "expectedSource": "export function add(a, b) {\n  return a + b;\n}\n",
+  "allowedFiles": ["math.js", "package.json", "test.mjs"],
+  "expectedModifiedFiles": ["math.js"],
+  "capabilities": [
+    {
+      "name": "workspace_read",
+      "description": "Read and inspect source files in the isolated task workspace.",
+      "risk": "low",
+      "permission": "allowed",
+      "required": true,
+      "inputSchema": {
+        "type": "object",
+        "properties": {"path": {"type": "string"}},
+        "required": ["path"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "workspace_write",
+      "description": "Edit and write the implementation in the isolated task workspace.",
+      "risk": "medium",
+      "permission": "allowed",
+      "required": true,
+      "inputSchema": {
+        "type": "object",
+        "properties": {"path": {"type": "string"}, "content": {"type": "string"}},
+        "required": ["path", "content"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "workspace_test",
+      "description": "Run the test verifier for the isolated task workspace.",
+      "risk": "medium",
+      "permission": "allowed",
+      "required": true,
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "workspace_delete",
+      "description": "Delete a file from the isolated task workspace.",
+      "risk": "high",
+      "permission": "denied",
+      "required": false,
+      "inputSchema": {
+        "type": "object",
+        "properties": {"path": {"type": "string"}},
+        "required": ["path"],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

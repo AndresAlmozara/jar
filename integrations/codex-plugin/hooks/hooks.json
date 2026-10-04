@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "SessionStart": [{"matcher": ".*", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/bridge.mjs\"", "timeout": 3, "statusMessage": "JAR V1 · initializing"}]}],
+    "UserPromptSubmit": [{"matcher": ".*", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/bridge.mjs\"", "timeout": 3, "statusMessage": "JAR V1 · routing"}]}],
+    "PreToolUse": [{"matcher": ".*", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/bridge.mjs\"", "timeout": 3}]}],
+    "PostToolUse": [{"matcher": ".*", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/bridge.mjs\"", "timeout": 3}]}],
+    "Stop": [{"matcher": ".*", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/bridge.mjs\"", "timeout": 3}]}],
+    "SessionEnd": [{"matcher": ".*", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/bridge.mjs\"", "timeout": 3}]}]
+  }
+}

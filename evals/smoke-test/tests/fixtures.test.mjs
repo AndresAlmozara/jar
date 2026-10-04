@@ -1,0 +1,23 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {ROOT,calibrate} from '../run.mjs';
+import {json,command,parseJson} from '../lib/common.mjs';
+import {temporary} from './helpers.mjs';
+import {reviewedPath,workspaceManifest} from '../../../packages/runtime-adapters/codex/src/owned-workspace.js';
+const config=json(path.join(ROOT,'config/diagnostic.json'));
+for(const task of config.tasks)test('Calibration: '+task.task_id,async()=>{const [r]=await calibrate(ROOT,[task]);assert(r.baselineFails);assert.equal(r.baseline.verdict.phase,'hidden_checks');assert(r.canonicalPasses);});
+test('Verifier rejects a plausible incomplete refresh fix with no retry recovery',async()=>{const tmp=temporary();try{
+ const base=path.join(ROOT,'tasks/01-skill-routing'),ws=path.join(tmp,'workspace');fs.cpSync(path.join(base,'workspace'),ws,{recursive:true});
+ fs.writeFileSync(path.join(ws,'src/identity/session-manager.js'),"import {AuthRefreshError} from './errors.js'; export class SessionManager {constructor({refresh,now=()=>Date.now()}){this.refresh=refresh;this.now=now;this.session=null;this.refreshing=null;}setSession(v){this.session=v;}getSession(){return this.session;}usableSession(){if(!this.refreshing)this.refreshing=this.refresh().catch(e=>{throw new AuthRefreshError('refresh failed',{cause:e});});return this.refreshing;}}\n");
+ const r=await command([process.execPath,path.join(base,'verifier/verify.mjs'),ws],{timeoutMs:12000});assert.equal(r.returncode,1);assert.equal(parseJson(r.stdout).phase,'hidden_checks');
+}finally{fs.rmSync(tmp,{recursive:true,force:true});}});
+test('All manifests use expanded capabilities and keep verifier/canonical outside model workspace',()=>{for(const t of config.tasks){const base=path.join(ROOT,'tasks',t.task_id),m=json(path.join(base,'manifest.json'));assert(m.surfaces.includes('capabilities'));assert.equal(m.capabilityProfile,'smoke-expanded');assert(m.include.every(p=>!p.includes('canonical')&&!p.includes('verifier')));}});
+test('Every generated manifest obeys the real owned-workspace path contract',()=>{for(const t of config.tasks){const m=json(path.join(ROOT,'tasks',t.task_id,'manifest.json'));
+  assert.doesNotThrow(()=>workspaceManifest(m),t.task_id);
+  for(const reviewed of [...m.include,...m.immutable,m.verifier?.root,m.verifier?.entrypoint].filter(Boolean))assert.equal(reviewedPath(reviewed),reviewed,t.task_id+': '+reviewed);
+}});
+test('Each task file equals the manifest task',()=>{for(const t of config.tasks){const base=path.join(ROOT,'tasks',t.task_id),m=json(path.join(base,'manifest.json'));assert.equal(fs.readFileSync(path.join(base,'task.md'),'utf8').trim(),m.task.trim());}});
+test('Fixture scale creates real routing pressure',()=>{const count=id=>json(path.join(ROOT,'tasks',id,'manifest.json')).include.length;assert(count('02-repository-context')>=40);assert(count('05-integrated')>=50);assert(fs.statSync(path.join(ROOT,'tasks/04-output-shadow/output-corpus.txt')).size>=20000);assert(fs.readdirSync(path.join(ROOT,'tasks/01-skill-routing/skills-catalog/skills')).length>=12);});
+test('Generated runtime output is external to tracked benchmark source',()=>{assert.equal(fs.existsSync(path.join(ROOT,'RESULTS')),false);assert.equal(fs.existsSync(path.join(ROOT,'LATEST')),false);});

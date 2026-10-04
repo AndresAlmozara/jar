@@ -1,0 +1,12 @@
+{
+  "version": "context.eval.v1",
+  "frozenBeforeCorpus": true,
+  "repository": {"maxFiles": 500},
+  "retrieval": {"candidateLimit": 40, "maxFileBytes": 65536, "maxTotalBytes": 4194304, "excerptChars": 2000},
+  "weights": {"path": 2, "content": 1},
+  "deterministic": {"id": "context/deterministic-v1", "outputLimit": 5},
+  "oko": {"id": "context/oko-v1", "candidateLimit": 40, "shortlistSize": 6, "outputLimit": 3, "excerptChars": 2000, "taskChars": 16000, "threshold": 0.5},
+  "offlineEngine": "constant-positive-0.8-v1",
+  "liveCaseIds": ["path", "config", "overlap"],
+  "liveCallCeiling": 18
+}

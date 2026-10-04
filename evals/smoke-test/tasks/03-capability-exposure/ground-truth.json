@@ -1,0 +1,35 @@
+{
+  "skills": {
+    "required": [],
+    "acceptable": []
+  },
+  "context": {
+    "core": [],
+    "supporting": []
+  },
+  "capabilities": {
+    "required": [
+      "workspace_read",
+      "workspace_write",
+      "workspace_run",
+      "configuration_inspect"
+    ],
+    "acceptable": [
+      "workspace_search",
+      "schema_inspect",
+      "test_inventory",
+      "source_outline"
+    ],
+    "distractors": [
+      "git_inspect",
+      "migration_inspect",
+      "coverage_read",
+      "test_history",
+      "benchmark_metadata",
+      "localization_inspect",
+      "asset_inspect",
+      "frontend_snapshot",
+      "release_metadata"
+    ]
+  }
+}

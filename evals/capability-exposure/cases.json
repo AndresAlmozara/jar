@@ -1,0 +1,419 @@
+[
+  {
+    "id": "bug",
+    "task": "Investigate a local regression bug, read source files and run unit tests.",
+    "inventoryState": "known",
+    "must": [
+      "file-read",
+      "file-search",
+      "unit-tests"
+    ],
+    "acceptable": [
+      "file-list",
+      "terminal",
+      "git-diff",
+      "git-log",
+      "test-report",
+      "config-read"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic bug task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "migration",
+    "task": "Inspect database schema, apply SQL migrations and run integration tests.",
+    "inventoryState": "known",
+    "must": [
+      "db-schema",
+      "sql-migrate",
+      "integration-tests"
+    ],
+    "acceptable": [
+      "sql-read",
+      "file-read",
+      "file-write",
+      "terminal"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic migration task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "web-research",
+    "task": "Search public web sources and read pages for a research summary.",
+    "inventoryState": "known",
+    "must": [
+      "web-search",
+      "browser"
+    ],
+    "acceptable": [
+      "http-get",
+      "markdown-write",
+      "pdf-read"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic web-research task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "frontend",
+    "task": "Edit frontend interface files and preview accessibility.",
+    "inventoryState": "known",
+    "must": [
+      "file-read",
+      "file-write",
+      "frontend-preview",
+      "accessibility"
+    ],
+    "acceptable": [
+      "file-search",
+      "file-list",
+      "unit-tests",
+      "terminal",
+      "image-inspect"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic frontend task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "data-analysis",
+    "task": "Read a CSV dataset, analyze tabular data with Python and create charts.",
+    "inventoryState": "known",
+    "must": [
+      "csv-read",
+      "python-data",
+      "chart"
+    ],
+    "acceptable": [
+      "notebook",
+      "file-read",
+      "file-list"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic data-analysis task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "documentation",
+    "task": "Read local documentation and write Markdown documentation.",
+    "inventoryState": "known",
+    "must": [
+      "docs-search",
+      "markdown-write"
+    ],
+    "acceptable": [
+      "file-read",
+      "file-search",
+      "file-list"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic documentation task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "git-github",
+    "task": "Inspect git changes and GitHub pull requests against issue reports.",
+    "inventoryState": "known",
+    "must": [
+      "git-diff",
+      "github-pr",
+      "github-issues"
+    ],
+    "acceptable": [
+      "git-log",
+      "file-read",
+      "unit-tests"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic git-github task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "local-only",
+    "task": "Read and search local files only, without browser or public web search.",
+    "inventoryState": "known",
+    "must": [
+      "file-read",
+      "file-search"
+    ],
+    "acceptable": [
+      "file-list"
+    ],
+    "mustNot": [
+      "deploy",
+      "browser",
+      "web-search",
+      "http-get"
+    ],
+    "includes": [],
+    "excludes": [
+      "browser",
+      "web-search",
+      "http-get"
+    ],
+    "facts": {},
+    "rationale": "Synthetic local-only task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "explicit-browser",
+    "task": "Use the browser to inspect the supplied page.",
+    "inventoryState": "known",
+    "must": [
+      "browser"
+    ],
+    "acceptable": [
+      "web-search",
+      "http-get"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [
+      "browser"
+    ],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic explicit-browser task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "forbid-browser",
+    "task": "Inspect documentation locally; do not browse.",
+    "inventoryState": "known",
+    "must": [
+      "docs-search"
+    ],
+    "acceptable": [
+      "file-read",
+      "file-search",
+      "file-list"
+    ],
+    "mustNot": [
+      "deploy",
+      "browser",
+      "web-search",
+      "http-get"
+    ],
+    "includes": [],
+    "excludes": [
+      "browser",
+      "web-search",
+      "http-get"
+    ],
+    "facts": {},
+    "rationale": "Synthetic forbid-browser task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "multi-capability",
+    "task": "Read a CSV dataset, compare SQL database records, create charts and write a Markdown report.",
+    "inventoryState": "known",
+    "must": [
+      "csv-read",
+      "sql-read",
+      "python-data",
+      "chart",
+      "markdown-write"
+    ],
+    "acceptable": [
+      "notebook",
+      "db-schema",
+      "file-read"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Synthetic multi-capability task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "almost-no-tools",
+    "task": "Explain the meaning of the word recursion from general knowledge.",
+    "inventoryState": "known",
+    "must": [],
+    "acceptable": [],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "No external operation is necessary for this conceptual explanation; exposure recall is undefined, not perfect.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "misleading-lexical",
+    "task": "Debug a browser-named database table using SQL records, without web access.",
+    "inventoryState": "known",
+    "must": [
+      "sql-read",
+      "db-schema"
+    ],
+    "acceptable": [
+      "file-read",
+      "file-search",
+      "config-read"
+    ],
+    "mustNot": [
+      "deploy",
+      "browser",
+      "web-search",
+      "http-get"
+    ],
+    "includes": [],
+    "excludes": [
+      "browser",
+      "web-search",
+      "http-get"
+    ],
+    "facts": {},
+    "rationale": "Synthetic misleading-lexical task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "unavailable",
+    "task": "Read local files to investigate a regression; unit test execution is unavailable.",
+    "inventoryState": "known",
+    "must": [
+      "file-read"
+    ],
+    "acceptable": [
+      "file-search",
+      "test-report"
+    ],
+    "mustNot": [
+      "deploy",
+      "unit-tests",
+      "integration-tests"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {
+      "unit-tests": {
+        "available": false
+      },
+      "integration-tests": {
+        "supported": false
+      }
+    },
+    "rationale": "Synthetic unavailable task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "permission-blocked",
+    "task": "Inspect GitHub issues if permitted and local git changes; GitHub access is denied.",
+    "inventoryState": "known",
+    "must": [
+      "git-diff"
+    ],
+    "acceptable": [
+      "git-log",
+      "file-read"
+    ],
+    "mustNot": [
+      "deploy",
+      "github-issues"
+    ],
+    "includes": [
+      "github-issues"
+    ],
+    "excludes": [],
+    "facts": {
+      "github-issues": {
+        "permission": "denied"
+      }
+    },
+    "rationale": "Synthetic permission-blocked task requires the listed direct operations; supporting operations are acceptable, unrelated catalog entries are not. High-risk deployment is forbidden by default.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "known-empty",
+    "task": "Inspect the supplied empty inventory.",
+    "inventoryState": "known-empty",
+    "must": [],
+    "acceptable": [],
+    "mustNot": [],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Known complete empty inventory has zero capabilities; no recall denominator.",
+    "labelsExhaustive": true
+  },
+  {
+    "id": "unknown",
+    "task": "Assess exposure when runtime inventory is unknown.",
+    "inventoryState": "unknown",
+    "must": [],
+    "acceptable": [],
+    "mustNot": [],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Unavailable inventory evidence must yield no decision and null metrics, never known-empty.",
+    "labelsExhaustive": false
+  },
+  {
+    "id": "provider-failure",
+    "task": "Read source files and run unit regression tests.",
+    "inventoryState": "known",
+    "must": [
+      "file-read",
+      "unit-tests"
+    ],
+    "acceptable": [
+      "file-search",
+      "test-report",
+      "terminal"
+    ],
+    "mustNot": [
+      "deploy"
+    ],
+    "includes": [],
+    "excludes": [],
+    "facts": {},
+    "rationale": "Provider fails on its second attempt; all deterministically eligible capabilities must remain visible.",
+    "labelsExhaustive": true,
+    "mockBehavior": "provider_failure"
+  }
+]

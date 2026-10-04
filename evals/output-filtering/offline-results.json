@@ -1,0 +1,1252 @@
+{
+  "version": "output.eval.v1",
+  "mode": "offline-synthetic",
+  "evidence_level": "E2",
+  "configuration_hash": "4f190f997d51a6979de368f591e7adec2436f2084c66eed6b73403c3ee827803",
+  "corpus_hash": "49b2be8d460fef82b459c5f45b689c35fc9bb3530eb3b9753b78218be7a44ba1",
+  "stable_report_sha256": "1012073568307c5f9d8dd3f311d190b96026bff2f6e9f15bd79d1909761b189d",
+  "summary": [
+    {
+      "strategy_id": "output/passthrough-v1",
+      "cases": 16,
+      "must_retain_recall": 1,
+      "false_drop_chars": 0,
+      "removed_chars": 0,
+      "reduction_ratio": 0,
+      "safe_removal_precision": null,
+      "recovery_successes": 16,
+      "calls": 0,
+      "provider_errors": 0,
+      "strategy_errors": 0
+    },
+    {
+      "strategy_id": "output/deterministic-v1",
+      "cases": 16,
+      "must_retain_recall": 1,
+      "false_drop_chars": 0,
+      "removed_chars": 38896,
+      "reduction_ratio": 0.3552048802315918,
+      "safe_removal_precision": 1,
+      "recovery_successes": 16,
+      "calls": 0,
+      "provider_errors": 0,
+      "strategy_errors": 0
+    },
+    {
+      "strategy_id": "output/jev-sieve-v1",
+      "cases": 16,
+      "must_retain_recall": 1,
+      "false_drop_chars": 0,
+      "removed_chars": 25432,
+      "reduction_ratio": 0.23224934476681003,
+      "safe_removal_precision": 1,
+      "recovery_successes": 16,
+      "calls": 20,
+      "provider_errors": 1,
+      "strategy_errors": 0
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "concise",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 22,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "concise",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "small_output",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 22,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "concise",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "small_output",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 22,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "progress",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 17027,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "progress",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "reduced",
+      "reason": "reduced",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": 1,
+        "retained_chars": 3563,
+        "removed_chars": 13464,
+        "retained_ratio": 0.20925588770775827,
+        "reduction_ratio": 0.7907441122922417,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "progress",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "reduced",
+      "reason": "reduced",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": 1,
+        "retained_chars": 8051,
+        "removed_chars": 8976,
+        "retained_ratio": 0.4728372584718389,
+        "reduction_ratio": 0.5271627415281611,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 6,
+        "settled": 6,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "failure",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5134,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "failure",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5134,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "failure",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5134,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "stack",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5176,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "stack",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5176,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "stack",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5176,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "warning",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 12806,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "warning",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "reduced",
+      "reason": "reduced",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": 1,
+        "retained_chars": 6822,
+        "removed_chars": 5984,
+        "retained_ratio": 0.5327190379509605,
+        "reduction_ratio": 0.4672809620490395,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "warning",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "reduced",
+      "reason": "reduced",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": 1,
+        "retained_chars": 3830,
+        "removed_chars": 8976,
+        "retained_ratio": 0.2990785569264407,
+        "reduction_ratio": 0.7009214430735593,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 6,
+        "settled": 6,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "search",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4200,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "search",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4200,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "search",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4200,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "listing",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4140,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "listing",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4140,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "listing",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4140,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "json",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4217,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "json",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4217,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "json",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4217,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "lexical",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 10211,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "lexical",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "reduced",
+      "reason": "reduced",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": 1,
+        "retained_chars": 4227,
+        "removed_chars": 5984,
+        "retained_ratio": 0.4139653315052394,
+        "reduction_ratio": 0.5860346684947606,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "lexical",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "no_filtering_required",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 10211,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "needle",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 12818,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "needle",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "no_filtering_required",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 12818,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "needle",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "reduced",
+      "reason": "reduced",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 3,
+        "retained_must_count": 3,
+        "false_drop_chars": 0,
+        "safe_removal_precision": 1,
+        "retained_chars": 5338,
+        "removed_chars": 7480,
+        "retained_ratio": 0.41644562334217505,
+        "reduction_ratio": 0.583554376657825,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 6,
+        "settled": 6,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "sensitive",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5135,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "sensitive",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5135,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "sensitive",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 5135,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "provider-failure",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 17011,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "provider-failure",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "reduced",
+      "reason": "reduced",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": 1,
+        "retained_chars": 3547,
+        "removed_chars": 13464,
+        "retained_ratio": 0.20851213920404443,
+        "reduction_ratio": 0.7914878607959556,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "provider-failure",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "error",
+      "reason": "provider_failure",
+      "gate": "would_fall_open",
+      "failure_stage": "provider",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 17011,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 2,
+        "settled": 2,
+        "failed": 1
+      }
+    },
+    {
+      "case_id": "mixed",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 6834,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "mixed",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 6834,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "mixed",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "unsafe_output",
+      "gate": "would_apply",
+      "failure_stage": "hard_rule",
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 2,
+        "retained_must_count": 2,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 6834,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "duplicates",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4750,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "duplicates",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "no_filtering_required",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4750,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "duplicates",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "no_filtering_required",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 4750,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "empty",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 0,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "empty",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "small_output",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 0,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "empty",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "small_output",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 0,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "unicode",
+      "strategy_id": "output/passthrough-v1",
+      "outcome": "passthrough",
+      "reason": "control",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 22,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "unicode",
+      "strategy_id": "output/deterministic-v1",
+      "outcome": "passthrough",
+      "reason": "small_output",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 22,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    },
+    {
+      "case_id": "unicode",
+      "strategy_id": "output/jev-sieve-v1",
+      "outcome": "passthrough",
+      "reason": "small_output",
+      "gate": "would_apply",
+      "failure_stage": null,
+      "metrics": {
+        "must_retain_recall": 1,
+        "must_retain_count": 1,
+        "retained_must_count": 1,
+        "false_drop_chars": 0,
+        "safe_removal_precision": null,
+        "retained_chars": 22,
+        "removed_chars": 0,
+        "retained_ratio": 1,
+        "reduction_ratio": 0,
+        "recovery_success": true
+      },
+      "calls": {
+        "attempted": 0,
+        "settled": 0,
+        "failed": 0
+      }
+    }
+  ],
+  "recorded_latency_ms": 50.17470000000007
+}

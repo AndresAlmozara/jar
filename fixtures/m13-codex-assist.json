@@ -1,0 +1,8 @@
+{
+  "task": "read inspect logs",
+  "descriptions": {
+    "tool_alpha": "Read records",
+    "tool_beta": "Archive bundles",
+    "tool_gamma": "Inspect logs"
+  }
+}

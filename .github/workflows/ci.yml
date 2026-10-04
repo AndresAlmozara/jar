@@ -1,0 +1,73 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    name: portable / ${{ matrix.os }} / node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [20, 22]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+
+      - name: Syntax check
+        run: node --check bin/jar.js
+
+      - name: Portable core tests
+        run: >-
+          node --test
+          tests/core.test.js
+          tests/strategy.test.js
+          tests/telemetry.test.js
+          tests/jev-provider.test.js
+          tests/capability-foundation.test.js
+          tests/capability-strategies.test.js
+          tests/skill-routing-foundation.test.js
+          tests/skill-routing-jev-strategies.test.js
+          tests/skill-routing-ecc-hybrids.test.js
+          tests/output-foundation.test.js
+          tests/output-recovery.test.js
+          tests/output-sieve.test.js
+          tests/opencode-observer.test.js
+          tests/v2-setup.test.js
+
+  diagnostics:
+    name: permanent diagnostics / node 22
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Component diagnostics
+        run: node --test evals/component-diagnostics/component-diagnostics.test.mjs
+
+      - name: M8 v2 causal regressions
+        run: node --test evals/component-diagnostics/m8-v2/m8-v2.test.mjs

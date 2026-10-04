@@ -1,0 +1,172 @@
+# Frozen synthetic input only. NOT an authorized launcher.
+# Outer Windows Sandbox remains the containment boundary; no tool execution is permitted.
+model = "m11-synthetic-direct"
+model_provider = "m11_loopback"
+model_catalog_json = "C:\\M11\\work\\codex\\model-catalog.json"
+cli_auth_credentials_store = "ephemeral"
+mcp_oauth_credentials_store = "file"
+approval_policy = "never"
+approvals_reviewer = "user"
+sandbox_mode = "danger-full-access"
+sqlite_home = "C:\\M11\\work\\state"
+log_dir = "C:\\M11\\work\\logs"
+check_for_update_on_startup = false
+allow_login_shell = false
+allow_symlinked_codex_home = false
+project_doc_max_bytes = 0
+project_doc_fallback_filenames = []
+project_root_markers = []
+include_environment_context = false
+include_permissions_instructions = false
+include_collaboration_mode_instructions = false
+include_apps_instructions = false
+developer_instructions = "M11 synthetic metadata experiment. Do not execute any tools."
+web_search = "disabled"
+notify = []
+
+[mcp_servers]
+
+[plugins]
+
+[marketplaces]
+
+[responses_api_metadata]
+
+[analytics]
+enabled = false
+
+[feedback]
+enabled = false
+
+[history]
+persistence = "none"
+
+[otel]
+exporter = "none"
+metrics_exporter = "none"
+trace_exporter = "none"
+log_user_prompt = false
+
+[agents]
+enabled = false
+
+[skills]
+include_instructions = false
+
+[skills.bundled]
+enabled = false
+
+[cloud]
+
+[cloud.skills]
+enabled = false
+
+[tools]
+
+[tools.update_plan]
+enabled = false
+
+[tools.experimental_request_user_input]
+enabled = false
+
+[features]
+content_item_kinds = false
+executed_tool_call_metadata = false
+agent_message_board = false
+api_key_model_discovery = false
+apps = false
+auth_elicitation = false
+browser_use = false
+browser_use_external = false
+chronicle = false
+code_mode = false
+code_mode_only = false
+code_mode_prewarm = false
+collaboration_modes = false
+computer_use = false
+context_management = false
+current_time_reminder = false
+daemon_auto_start = false
+deferred_executor = false
+deferred_tool_world_state = false
+elevated_windows_sandbox = false
+enable_experimental_windows_sandbox = false
+enable_request_compression = false
+executor_capability_discovery = false
+experimental_windows_sandbox = false
+external_agent_memory_import = false
+external_migration = false
+goals = false
+guardian_approval = false
+guardian_ext = false
+hooks = false
+image_generation = false
+imagegenext = false
+js_repl = false
+memories = false
+memory_tool = false
+multi_agent = false
+multi_agent_v2 = false
+network_proxy = false
+personality = false
+plugin_hooks = false
+plugins = false
+powershell_shell_version = false
+prefer_mxc = false
+realtime_conversation = false
+recommended_plugins = false
+remote_control = false
+remote_models = false
+remote_plugin = false
+request_permissions_tool = false
+respect_system_proxy = false
+responses_websockets = false
+responses_websockets_v2 = false
+runtime_metrics = false
+search_tool = false
+send_message_to_user_async = false
+shell_snapshot = false
+shell_snapshot_v2 = false
+shell_tool = false
+shell_zsh_fork = false
+skill_env_var_dependency_prompt = false
+skill_mcp_dependency_install = false
+skill_search = false
+sleep_tool = false
+standalone_web_search = false
+system_proxy_fallback = false
+token_budget = false
+tool_search = false
+tool_search_always_defer_mcp_tools = false
+tool_suggest = false
+unbounded_connection_retries = false
+unified_exec = false
+use_agent_identity = false
+use_xaa = false
+view_image = false
+windows_sandbox_service = false
+workspace_dependencies = false
+
+[features.code_mode_host]
+enabled = false
+disable_in_process_fallback = false
+
+[model_providers]
+
+[model_providers.m11_loopback]
+name = "M11 isolated loopback"
+base_url = "http://127.0.0.1:43187/v1"
+wire_api = "responses"
+requires_openai_auth = false
+supports_websockets = false
+supports_standalone_web_search = false
+request_max_retries = 0
+stream_max_retries = 0
+stream_idle_timeout_ms = 2000
+websocket_connect_timeout_ms = 1000
+
+[model_providers.m11_loopback.http_headers]
+
+[model_providers.m11_loopback.env_http_headers]
+
+[model_providers.m11_loopback.query_params]

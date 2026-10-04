@@ -1,0 +1,290 @@
+[
+  {
+    "name": "file-read",
+    "description": "Read local file contents",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 180,
+    "coverageAtoms": ["workspace.read"]
+  },
+  {
+    "name": "file-write",
+    "description": "Write local text files",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 193,
+    "coverageAtoms": ["workspace.write"]
+  },
+  {
+    "name": "file-search",
+    "description": "Search local files by text",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 206,
+    "coverageAtoms": ["workspace.discovery", "workspace.search"]
+  },
+  {
+    "name": "file-list",
+    "description": "List local directory paths",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 219,
+    "coverageAtoms": ["workspace.discovery", "repository.structure"]
+  },
+  {
+    "name": "terminal",
+    "description": "Run local terminal commands",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 232,
+    "coverageAtoms": ["workspace.execute"]
+  },
+  {
+    "name": "git-diff",
+    "description": "Inspect git changes",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 245,
+    "coverageAtoms": ["version_control.inspect", "version_control.changes"]
+  },
+  {
+    "name": "git-log",
+    "description": "Read git commit history",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 258,
+    "coverageAtoms": ["version_control.inspect", "version_control.history"]
+  },
+  {
+    "name": "git-commit",
+    "description": "Create local git commits",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 271,
+    "coverageAtoms": ["version_control.change"]
+  },
+  {
+    "name": "github-issues",
+    "description": "Read GitHub issue reports",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 284,
+    "coverageAtoms": ["external.catalog", "external.issues"]
+  },
+  {
+    "name": "github-pr",
+    "description": "Inspect GitHub pull requests",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 297,
+    "coverageAtoms": ["version_control.inspect", "version_control.review", "external.catalog"]
+  },
+  {
+    "name": "browser",
+    "description": "Browse web pages interactively",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 310,
+    "coverageAtoms": ["external.web", "external.browse"]
+  },
+  {
+    "name": "web-search",
+    "description": "Search public web sources",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 323,
+    "coverageAtoms": ["external.web", "external.search"]
+  },
+  {
+    "name": "http-get",
+    "description": "Fetch HTTP resources",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 336,
+    "coverageAtoms": ["external.web", "external.fetch"]
+  },
+  {
+    "name": "sql-read",
+    "description": "Read database SQL queries",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 349,
+    "coverageAtoms": ["data.inspect", "data.database", "repository.schema"]
+  },
+  {
+    "name": "sql-migrate",
+    "description": "Apply database schema migrations",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 362,
+    "coverageAtoms": ["lifecycle.migration"]
+  },
+  {
+    "name": "db-schema",
+    "description": "Inspect database schema",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 375,
+    "coverageAtoms": ["repository.schema", "data.schema"]
+  },
+  {
+    "name": "unit-tests",
+    "description": "Run unit regression tests",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 388,
+    "coverageAtoms": ["verification.tests", "verification.unit"]
+  },
+  {
+    "name": "integration-tests",
+    "description": "Run integration tests",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 401,
+    "coverageAtoms": ["verification.tests", "verification.integration"]
+  },
+  {
+    "name": "package-inspect",
+    "description": "Inspect package dependencies",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 414,
+    "coverageAtoms": ["repository.dependencies"]
+  },
+  {
+    "name": "package-install",
+    "description": "Install package dependencies",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 427,
+    "coverageAtoms": ["workspace.execute", "repository.dependencies"]
+  },
+  {
+    "name": "docs-search",
+    "description": "Search local documentation",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 440,
+    "coverageAtoms": ["documentation.read", "documentation.search"]
+  },
+  {
+    "name": "markdown-write",
+    "description": "Write Markdown documentation",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 453,
+    "coverageAtoms": ["documentation.write", "documentation.markdown", "workspace.write"]
+  },
+  {
+    "name": "python-data",
+    "description": "Analyze tabular data with Python",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 466,
+    "coverageAtoms": ["data.analyze", "data.python", "workspace.execute"]
+  },
+  {
+    "name": "csv-read",
+    "description": "Read CSV datasets",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 479,
+    "coverageAtoms": ["data.inspect", "data.tabular"]
+  },
+  {
+    "name": "notebook",
+    "description": "Create analytical notebooks",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 492,
+    "coverageAtoms": ["data.analyze", "documentation.write"]
+  },
+  {
+    "name": "chart",
+    "description": "Create data visualization charts",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 505,
+    "coverageAtoms": ["data.visualize"]
+  },
+  {
+    "name": "pdf-read",
+    "description": "Read PDF documents",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 518,
+    "coverageAtoms": ["documentation.read"]
+  },
+  {
+    "name": "archive",
+    "description": "Create file archive artifacts",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 531,
+    "coverageAtoms": ["workspace.write"]
+  },
+  {
+    "name": "deploy",
+    "description": "Deploy cloud services",
+    "kind": "tool",
+    "risk": "high",
+    "schemaChars": 544,
+    "coverageAtoms": ["lifecycle.release"]
+  },
+  {
+    "name": "cloud-logs",
+    "description": "Read cloud service logs",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 557,
+    "coverageAtoms": ["data.inspect"]
+  },
+  {
+    "name": "frontend-preview",
+    "description": "Preview frontend interface",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 570,
+    "coverageAtoms": ["frontend.inspect"]
+  },
+  {
+    "name": "accessibility",
+    "description": "Check frontend accessibility",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 583,
+    "coverageAtoms": ["frontend.accessibility"]
+  },
+  {
+    "name": "json-validate",
+    "description": "Validate JSON documents",
+    "kind": "tool",
+    "risk": "low",
+    "schemaChars": 596,
+    "coverageAtoms": ["repository.schema"]
+  },
+  {
+    "name": "image-inspect",
+    "description": "Inspect image artifacts",
+    "kind": "mcp_tool",
+    "risk": "low",
+    "schemaChars": 609,
+    "coverageAtoms": ["assets.inspect"]
+  },
+  {
+    "name": "test-report",
+    "description": "Read test results",
+    "kind": "plugin_tool",
+    "risk": "low",
+    "schemaChars": 622,
+    "coverageAtoms": ["verification.tests"]
+  },
+  {
+    "name": "config-read",
+    "description": "Read application configuration",
+    "kind": "cli",
+    "risk": "low",
+    "schemaChars": 635,
+    "coverageAtoms": ["repository.configuration"]
+  }
+]

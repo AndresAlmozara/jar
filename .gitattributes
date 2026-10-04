@@ -1,0 +1,2 @@
+evals/generational/** text eol=lf
+tests/generational-eval.test.js text eol=lf

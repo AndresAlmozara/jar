@@ -1,0 +1,1 @@
+export class SessionProvider {constructor(refresh){this.refresh=refresh;this.current=null;}set(v){this.current=v;}async get(){if(this.current?.expiresAt>Date.now())return this.current;this.current=await this.refresh(this.current?.refreshToken);return this.current;}}

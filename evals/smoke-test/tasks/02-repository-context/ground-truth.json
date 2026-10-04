@@ -1,0 +1,36 @@
+{
+  "skills": {
+    "required": [],
+    "acceptable": []
+  },
+  "context": {
+    "core": [
+      "src/services/weekly-summary.js",
+      "src/time/local-day.js",
+      "src/domain/unavailable.js",
+      "src/domain/activity-duration.js"
+    ],
+    "supporting": [
+      "tests/weekly-summary.test.mjs"
+    ]
+  },
+  "capabilities": {
+    "required": [
+      "workspace_read",
+      "workspace_write",
+      "workspace_run"
+    ],
+    "acceptable": [
+      "workspace_search",
+      "source_outline",
+      "test_inventory"
+    ],
+    "distractors": [
+      "asset_inspect",
+      "frontend_snapshot",
+      "migration_inspect",
+      "release_metadata",
+      "localization_inspect"
+    ]
+  }
+}

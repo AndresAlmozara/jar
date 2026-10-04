@@ -1,0 +1,1 @@
+const allowed=new Set(['enabled','timeoutMs','retry']);export function mergeConfig(base,override){for(const key of Object.keys(override))if(!allowed.has(key))throw Error('UNKNOWN_CONFIG_KEY');return {...base,...override,retry:{...(base.retry??{}),...(override.retry??{})}};}

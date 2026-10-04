@@ -1,0 +1,1 @@
+export class ImportStore {constructor(){this.records=[];this.keys=new Map();}has(k){return this.keys.has(k);}get(k){return this.keys.get(k)??null;}commit(k,data){if(this.keys.has(k))return this.keys.get(k);const id='r'+(this.records.length+1);this.records.push({id,data});this.keys.set(k,id);return id;}}

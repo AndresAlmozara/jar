@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "opsdesk.hidden-seeds.v1",
+  "seeds": [
+    {"id":"alpha","severity":"P0","createdAt":"2026-01-01T00:00:00.000Z","shiftMs":86400000},
+    {"id":"bravo","severity":"P1","createdAt":"2026-02-03T10:15:00.000Z","shiftMs":-7200000},
+    {"id":"charlie","severity":"P2","createdAt":"2024-02-29T23:00:00.000Z","shiftMs":31536000000},
+    {"id":"delta","severity":"P3","createdAt":"2030-12-20T08:45:30.000Z","shiftMs":60000}
+  ]
+}

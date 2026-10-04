@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "jar.benchmark-manifest.v1",
+  "benchmarkId": "opsdesk-soft-v1",
+  "title": "OpsDesk Soft",
+  "role": "LEGACY_DIAGNOSTIC",
+  "sourceCommit": "5f0591d31f5833eb2e45b2db2219b616a8af4b3a",
+  "protocolVersion": "jar.opsdesk-soft-v1.v1",
+  "baselineAcceptancePolicy": "DIAGNOSTIC_REFERENCE",
+  "fixtureHash": "0b4f0335e7c6650b03ca6ef31a2ca3f9cdc7c30ec551e2145a92e862b1f2e6ec",
+  "taskHash": "566eca5f27a4639e7c22f9dd48bfb0fe92b0ee994ae6af55dd278c30dcdef877",
+  "publicTestHash": "debe9e6c86b0a32509ebc631ea79f2659c0d99ce3f3fdf07c622e3fa03b98eeb",
+  "verifierHash": "1e2723f1ebd1cf1f33acfa0d3eab655d925021b1bb03d36aeb8fea2cb97c169b",
+  "dependencyHash": "81cf1f55e7dbd67d302e9f79ff3e99eb108fc6a44ffe81f407536d1d736548e2",
+  "originalPath": "evals/product-trial/",
+  "recoveredAt": "2026-10-01T21:55:00.000Z",
+  "canonical": false,
+  "developmentEval": false,
+  "historicalReplication": true,
+  "provenanceStatus": "HISTORICAL_BENCHMARK_PROVENANCE_PARTIAL",
+  "originalGitObjects": {
+    "productTrialTree": "a2215bfbabb6aa814ca2ec70cd6bac1bc1f59f40",
+    "starterTree": "8cafa33de1a61f074f27ebac8e2652e15f5d632a",
+    "taskBlob": "b74ab47b516f2936fefb5bd9f1c8a18608555acb",
+    "evaluatorTree": "c17ea98a811a64bd9df2f534cc118e539ab4eb28",
+    "verifierBlob": "249032800b3dacdfcc8db2e6f69d5acf58b57b6e",
+    "publicTestsTree": "4275b113ac7317ebe9e5347d8921cf675ed7d6ab",
+    "packageBlob": "212d3cf2fe4dcf6243ce12736780eaecbb060230",
+    "lockfileBlob": "4ae3bc8b1941f744319ee41af7f2d0210a7381a4"
+  },
+  "recoveredPaths": [
+    "starter/",
+    "task.md",
+    "evaluator/acceptance-runner.mts",
+    "evaluator/known-good/src/"
+  ],
+  "semantics": {
+    "incidentStatuses": ["OPEN", "INVESTIGATING", "RESOLVED"],
+    "storageVersion": 1,
+    "exportVersion": 1,
+    "hiddenAcceptanceChecks": 21,
+    "publicTests": "four historical placeholder assertions",
+    "lifecycleActivity": false,
+    "assignee": false,
+    "migration": false
+  },
+  "portingChanges": [
+    "Relocated immutable benchmark definition under evals/benchmark/scenarios.",
+    "Adapted evaluator import paths and execution/result APIs to the current harness.",
+    "Added a benchmark-local Node TypeScript resolver matching the historical tsx support for extensionless relative imports.",
+    "Added current compatibility, naming, telemetry, storage, and reporting wrappers without changing task or acceptance semantics."
+  ],
+  "verifierLimitations": [
+    "Public tests are historical placeholder assertions.",
+    "Hidden acceptance is a 21-check deterministic domain/storage/import evaluator and does not deeply verify UI behavior.",
+    "No mutation gauntlet or property seeds are added because that would change historical difficulty."
+  ],
+  "historicalObservation": {
+    "controlMainModelTokens": 121790,
+    "jarMainModelTokens": 84804,
+    "jarJevTokensApproximate": 5814,
+    "controlWallTimeMs": null,
+    "jarWallTimeMs": null,
+    "caveats": ["N=1", "old harness lifecycle issue", "old JAR architecture", "not current evidence"]
+  }
+}

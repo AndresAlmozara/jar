@@ -1,0 +1,2 @@
+import assert from 'node:assert/strict';import {SessionManager} from './src/identity/session-manager.js';
+let calls=0;const m=new SessionManager({refresh:async()=>{calls++;return {accessToken:'new',refreshToken:'r2',expiresAt:Date.now()+60000};}});m.setSession({accessToken:'old',refreshToken:'r1',expiresAt:0});assert.equal((await m.usableSession()).accessToken,'new');assert.equal(calls,1);console.log('session public tests passed');

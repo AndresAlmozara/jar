@@ -1,0 +1,13 @@
+{
+  "schemaVersion":"jar.owned-workspace.v1",
+  "id":"normalize-labels-v1",
+  "sourceRoot":"workspace",
+  "task":"Implement normalizeLabels(values) in normalize.js. Given an array of strings, trim whitespace, lowercase, discard empty labels and remove duplicates while preserving first-seen order. Do not mutate the input array. Run the public test. Use no dependencies.",
+  "include":["normalize.js","package.json","public-test.mjs"],
+  "exclude":[".git",".jar","node_modules","coverage","dist","build"],
+  "immutable":["package.json","public-test.mjs"],
+  "limits":{"maxFiles":10,"maxFileBytes":16384,"maxTotalBytes":65536},
+  "commands":{"test":{"argv":["node","public-test.mjs"],"timeoutMs":10000,"maxOutputBytes":4096}},
+  "surfaces":["capabilities","skills","context","output-shadow"],
+  "verifier":{"root":"verifier","entrypoint":"verify.mjs"}
+}

@@ -1,0 +1,1 @@
+export function summarize(lines){const error=lines.find(x=>/^ERROR /.test(x));const retry=[...lines].reverse().find(x=>x.includes('retry='));const artifact=[...lines].reverse().find(x=>x.startsWith('ARTIFACT '));return {errorCode:error?.split(/\s+/)[1]??null,retry:retry?.split('retry=')[1]?.trim()??null,artifact:artifact?.slice(9).trim()??null};}

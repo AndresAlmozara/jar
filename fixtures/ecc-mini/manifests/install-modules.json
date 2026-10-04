@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "framework-language",
+      "kind": "skills",
+      "description": "Framework and application engineering skills.",
+      "paths": ["skills/backend-patterns"],
+      "stability": "stable"
+    },
+    {
+      "id": "workflow-quality",
+      "kind": "skills",
+      "description": "Quality workflow skills.",
+      "paths": ["skills/tdd-workflow"],
+      "stability": "stable"
+    }
+  ]
+}

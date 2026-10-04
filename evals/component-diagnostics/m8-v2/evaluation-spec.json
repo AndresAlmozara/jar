@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "jar.m8-permanent-diagnostics.spec.v2",
+  "campaignId": "m8-permanent-diagnostics-v2-2026-10-03",
+  "source": {
+    "startingCheckpoint": "1968f8b23ce1f3eb3a5e032559feed8312470171",
+    "canonicalV1Commit": "bb1331e7d7863df0bfc3711d3ad19878abfd9ccf",
+    "canonicalBranch": "main",
+    "canonicalRemoteRef": "origin/main",
+    "dailyDriverTag": "jar-v1-daily-driver-v1",
+    "mutable": false
+  },
+  "supersession": {
+    "v1": "INVALID_PAIRED_CAUSAL_IDENTITY: treatment-dependent incoming inventory and shadow-gate input",
+    "v2": "ONE treatment-independent authoritative operational inventory, complete exposure input, gate input, and starter identity per pair",
+    "treatmentChanged": false
+  },
+  "inference": {
+    "model": "gpt-5.6-sol",
+    "reasoningEffort": "medium",
+    "runtimeVersion": "0.159.2",
+    "runtimeSha256": "fcd5eafefb4ff4a607f244e099e0974f66e17966b6ffda6948de2ef3a7a79530",
+    "jevModel": "jev-1.13.0",
+    "jevMaximumRetries": 0
+  },
+  "suites": [
+    {"id": "m8-operational-closure-v2", "version": "2.0.0", "supersedes": "m8-operational-closure-v1 1.0.0", "contrast": "HIGH_CLOSURE/BROAD_INVENTORY versus LOW_CLOSURE/BROAD_INVENTORY"},
+    {"id": "m8-inventory-headroom-v2", "version": "2.0.0", "supersedes": "m8-inventory-headroom-v1 1.0.0", "contrast": "HIGH_CLOSURE/BROAD_INVENTORY versus HIGH_CLOSURE/REDUCED_INVENTORY"}
+  ],
+  "treatments": [
+    {
+      "id": "v1",
+      "role": "REFERENCE_V1",
+      "treatmentHash": "916f07dfcbd7f14e07bf934131c1b5cca09d7e500175c29ed10d286e31352600",
+      "sourceFiles": ["packages/skill-routing/src/ecc-native.js", "packages/repository-context/src/deterministic.js", "packages/capability-exposure/src/hierarchical-cover.js", "packages/runtime-adapters/codex/src/assist-strategy.js"],
+      "mutable": false
+    },
+    {
+      "id": "v1+m8-operational-r1",
+      "treatmentHash": "78b3f21500fe045ade30835388c41e8a0c267492c0929a3c5868cd4258afcaea",
+      "m8Hash": "8937d399ef1beef19f52f8e7b625836f61a4cc7041a6cab8c595535f48aefef2",
+      "sourceFiles": ["packages/skill-routing/src/ecc-native.js", "packages/repository-context/src/deterministic.js", "evals/benchmark/lib/tools.mjs", "packages/capability-exposure/src/contracts.js", "packages/capability-exposure/src/operational-sufficiency-r1.js", "packages/runtime-adapters/codex/src/assist-strategy.js"],
+      "mutable": false
+    }
+  ],
+  "pairIdentity": {
+    "sharedBeforeBoundary": ["diagnostic suite", "task base", "task/prompt condition", "repetition", "starter/workspace hash", "benchmark requirements", "verifier", "harness", "model", "reasoning effort", "runtime", "seed", "capability universe", "canonical inventory object and hash", "operational facts", "permissions/scope/prerequisites", "closure condition", "inventory width", "complete exposure input", "shadow-gate input and hash"],
+    "onlyPermittedDivergence": "strategy/treatment identity",
+    "zeroTurnFailure": "PAIR_IDENTITY_INVALID"
+  },
+  "productMatrix": {
+    "taskBases": ["m8-cache", "m8-redaction"],
+    "conditions": ["HIGH_CLOSURE_BROAD_INVENTORY", "LOW_CLOSURE_BROAD_INVENTORY", "HIGH_CLOSURE_REDUCED_INVENTORY"],
+    "treatments": ["v1", "v1+m8-operational-r1"],
+    "repetitions": 2,
+    "plannedPairs": 12,
+    "plannedValidTurns": 24,
+    "excluded": ["LOW_CLOSURE_REDUCED_INVENTORY", "adaptive arms", "M6 product work"]
+  },
+  "provenance": {
+    "phase5Sections": ["M8-1", "M8-2", "M8-3"],
+    "reconciledPropositions": ["P012", "P013", "P026", "P031", "P058", "P059", "P060", "P061", "P062"],
+    "empiricalObservations": ["operational M8 r1 repaired historical false sufficiency to zero", "the first M8 v1 product episode exposed non-invariant treatment-dependent incoming inventory", "the paired v1 shadow-gate input hashes differed before the treatment boundary"],
+    "included": ["trusted operational inventory as treatment-independent executor truth", "semantic/executable split", "atomic obligations", "exact-small oracle then greedy comparator", "deterministic sufficiency verification", "observational-only frozen activation hypothesis"],
+    "excluded": ["M8 treatment redesign", "production activation", "learned ontology", "new request topology", "unsafe unknown-contract pruning", "M6 reruns", "monolithic V2"],
+    "minimumCoherence": "The shared authoritative inventory, complete exposure input, pair invariant contract, and unchanged strategy split are the smallest coupled evaluator repair that can isolate operational M8 without changing the treatment."
+  },
+  "shadowGate": {
+    "id": "m8-activation-shadow-v1",
+    "sourceHashAtV2Freeze": "c2400efee8ced96fc77eaba09252628b5ec77ba5aa6516ca1dca11eef1d86489",
+    "semanticsChanged": false,
+    "causal": false,
+    "inputTreatmentIndependent": true,
+    "maximumProviderRequestsPerTaskCondition": 0
+  },
+  "budgets": {
+    "plannedProductTurns": 24,
+    "absoluteStartedProductTurns": 28,
+    "maximumInfrastructureReplacements": 4,
+    "replacementPerCell": 1,
+    "zeroTurnSetupFailuresConsumeReplacement": false,
+    "jevAttempts": 600,
+    "jevInputTokens": 4000000
+  },
+  "evaluationIdentity": {
+    "planHash": "309bfd93cf08ec30a38016949d4b4271b012d89019b7df1966b865e236ef732a",
+    "sources": {
+      "common": "evals/component-diagnostics/m8-v2/common.mjs",
+      "inventory": "evals/component-diagnostics/m8-v2/inventory.mjs",
+      "plan": "evals/component-diagnostics/m8-v2/plan.mjs",
+      "pairIdentity": "evals/component-diagnostics/m8-v2/pair-identity.mjs",
+      "isolation": "evals/component-diagnostics/m8-v2/isolation.mjs",
+      "regression": "evals/component-diagnostics/m8-v2/regression.mjs",
+      "controller": "evals/component-diagnostics/m8-v2/controller.mjs",
+      "live": "evals/component-diagnostics/m8-v2/live.mjs",
+      "identity": "evals/component-diagnostics/m8-v2/identity.mjs",
+      "preflight": "evals/component-diagnostics/m8-v2/preflight.mjs",
+      "report": "evals/component-diagnostics/m8-v2/report.mjs",
+      "cli": "evals/component-diagnostics/m8-v2/cli.mjs",
+      "tests": "evals/component-diagnostics/m8-v2/m8-v2.test.mjs",
+      "productEvaluator": "evals/component-diagnostics/product-evaluator.mjs",
+      "shadowGate": "evals/component-diagnostics/shadow-gate.mjs"
+    },
+    "sourceHashes": {
+      "common": "fc94277e263bf1ef54874ea449b063d8228edb59cea36b693fadf7fbca330ca2",
+      "inventory": "9f03d93b7b050c2b26a5110401eb0721d11d4defcbc0dbaec937cb899ee9bf67",
+      "plan": "42d0b0038fdce60198965dbdc910c7ff18b36d4b29dfc5f62254477ef78df98a",
+      "pairIdentity": "3ac82440c9b5ae7ad3f6677c26c7d119a377d988bd9d752ac143426e64b6c95d",
+      "isolation": "4cb4fdc5745cc184186a842e127463943cb47e32e4f84a44cadf88b1470456ef",
+      "regression": "ea0ced43fba51326347bbab8cb8e581b6f161afafcf4f377760da43e7afb10d8",
+      "controller": "c0cc44828ce35681d93d4b91f5d35eb074e22ccd31877833835bc74f890e313b",
+      "live": "bf7ae2f29b09ea45d55bfcdc9efeb3a9e7dfb74d921363590959de686923f1b7",
+      "identity": "2cf2d7d9bc900112e55bf839d7a660f075e67b0038c3d74bf1db1d450503bd8d",
+      "preflight": "4c137959d7324ab1d41b18284ede48258731e9f8a1b69aa582be6be4e57fcd92",
+      "report": "93f8eb6823eb9f212ebdd5c242b59713ff9a60322bdf7cb58d1f2f8c30714607",
+      "cli": "bc371ac31c4ff9241f896f256f642b52c99b227a47daec85159d786d26e227db",
+      "tests": "81ee6c59fe6e79a6729e2a16524febbec21f329e40860e5742f7fcea10233af3",
+      "productEvaluator": "1d3cf603540e0f1f6ba9862394e9a8a34aa49e534450b16e39811f22d7e3c283",
+      "shadowGate": "c2400efee8ced96fc77eaba09252628b5ec77ba5aa6516ca1dca11eef1d86489"
+    }
+  },
+  "freeze": {
+    "hashAlgorithm": "sha256 of JSON serialization with freeze.specHash omitted",
+    "specHash": "4f757e460720b0b18f26a9017ba4167cc7f401a818252487a0ca59f3369586f5"
+  }
+}

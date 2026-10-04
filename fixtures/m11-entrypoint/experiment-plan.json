@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "m11.entrypoint-plan.v1",
+  "status": "GUEST_PREFLIGHT_PACKAGE_NO_RUNTIME_LAUNCH",
+  "expectedRuntime": "0.158.0-alpha.2.1",
+  "entrypointCandidate": "app-server with owned experimental dynamicTools driver",
+  "providerIntent": {
+    "protocol": "openai-responses-http",
+    "host": "127.0.0.1",
+    "port": "OWNED_EPHEMERAL_PORT_NOT_ALLOCATED",
+    "requiresRealCredentials": false,
+    "retryBudgets": 0,
+    "unboundedRetries": false,
+    "webSockets": false,
+    "systemProxy": false,
+    "fallback": false
+  },
+  "disabledPathIntent": ["analytics", "otel-exporters", "plugins", "cloud-refresh", "remote-model-catalog", "mcp", "hooks", "guardian-prewarm", "shell-snapshot"],
+  "toolModeIntent": "direct",
+  "toolSearchIntent": "disabled",
+  "deferredIntent": "disabled",
+  "modelCatalog": "FROZEN_AND_STAGED_NOT_RUNTIME_RESOLVED",
+  "effectiveConfig": "STATIC_HASH_BOUND_GUEST_VERIFICATION_PENDING",
+  "baselineSyntheticIntent": ["tool_alpha", "tool_beta", "tool_gamma"],
+  "filteredSyntheticIntent": ["tool_alpha", "tool_gamma"],
+  "unavoidableBuiltins": [],
+  "completeExpectedInventory": ["tool_alpha", "tool_beta", "tool_gamma"],
+  "runtimeMetadataPolicyId": "codex.responses.runtime-metadata.initial.v1",
+  "runtimeAdmission": "NOT_EVALUATED",
+  "runtimeCaptureAuthorized": false
+}

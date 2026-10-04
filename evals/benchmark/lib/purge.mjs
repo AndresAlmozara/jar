@@ -1,0 +1,8 @@
+import fs from 'node:fs';import path from 'node:path';
+export const LEGACY_RESULT_NAMES=['smoke-test','product-trial','m8-hsce'];
+export const ACTIVE_LEGACY_INPUTS={
+  'smoke-test':new Set(['MODEL-BASELINES','MODEL-METADATA','MODEL-PIN.json']),
+  'product-trial':new Set(['dependency-seed-20260930'])
+};
+export function classifyBenchmarkPath(repo,target){const root=path.resolve(repo,'.jar','benchmarks'),absolute=path.resolve(target);const relative=path.relative(root,absolute).replaceAll('\\','/');if(relative===''||relative.startsWith('../')||path.isAbsolute(relative))return{classification:'OUTSIDE_OR_ROOT',deletable:false,relative};const top=relative.split('/')[0];return{classification:LEGACY_RESULT_NAMES.includes(top)?'LEGACY_GENERATED_RESULT':top==='canonical'?'CANONICAL_RESULT':'UNKNOWN',deletable:LEGACY_RESULT_NAMES.includes(top),relative};}
+export function purgeLegacyGeneratedResults(repo,{remove=(target)=>fs.rmSync(target,{recursive:true,force:true})}={}){const root=path.resolve(repo,'.jar','benchmarks'),removed=[],preserved=[path.join(repo,'evals','benchmark'),path.join(repo,'evals','smoke-test'),path.join(repo,'.jar','live-readiness')];for(const name of LEGACY_RESULT_NAMES){const target=path.join(root,name),classification=classifyBenchmarkPath(repo,target);if(!classification.deletable)throw Object.assign(Error('PURGE_TARGET_REJECTED'),{code:'PURGE_TARGET_REJECTED',target});if(!fs.existsSync(target))continue;const keep=ACTIVE_LEGACY_INPUTS[name];if(!keep){remove(target);removed.push(target);continue;}for(const entry of fs.readdirSync(target)){const child=path.join(target,entry);if(keep.has(entry)){preserved.push(child);continue;}remove(child);removed.push(child);}}return{root,removed,preserved};}

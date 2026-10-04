@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict';import {weeklySummary} from './src/services/weekly-summary.js';assert.deepEqual(weeklySummary([{startedAt:'2025-06-10T12:00:00Z',offsetMinutes:0,durationSeconds:300,distanceMeters:1000}]),{'2025-06-10':300});console.log('weekly public tests passed');

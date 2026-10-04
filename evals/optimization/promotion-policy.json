@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "jar.optimization-policy.v1",
+  "status": "PROPOSED_DEFAULTS_ADOPTED_ONLY_WHEN_USER_LAUNCHES_CAMPAIGN",
+  "purpose": "Bounded cumulative engineering optimization, not statistical certification",
+  "reportBaseline": "5f0591d31f5833eb2e45b2db2219b616a8af4b3a",
+  "objectiveOrder": ["safety_and_validity", "functional_preservation", "mechanism_evidence", "credit_and_latency_efficiency"],
+  "references": {
+    "noJarControls": "immutable_per_scenario",
+    "campaignOriginJar": "immutable",
+    "incumbentJar": "last_accepted_commit_and_all_eligible_evidence",
+    "candidateMustStartAt": "incumbentJar",
+    "compareAgainst": ["incumbentJar", "campaignOriginJar", "noJarControls"]
+  },
+  "quality": {
+    "zeroPolicyIdentityOrIsolationViolations": true,
+    "requireCompletedSessionAndValidEvaluation": true,
+    "preserveEveryPreviouslyPassingFrozenCheckPerScenario": true,
+    "requireBuildAndPublicTestsPass": true,
+    "hardScenarioMustRemainFullyCorrect": true,
+    "softReferenceMayBeProductIncorrect": true,
+    "mayAverageScenarioCorrectness": false,
+    "mayCountChecksAsIndependentTasks": false,
+    "allowProductPatchEditingByCampaignAgent": false,
+    "missingEvidence": "INCONCLUSIVE_OR_BLOCKED_NEVER_PASS"
+  },
+  "efficiency": {
+    "primaryConsumptionMetric": "verified_account_credits_else_published_credit_equivalent_estimate",
+    "missingPricingOrTokenBreakdown": "BLOCK_EFFICIENCY_PROMOTION_CONTINUE_OFFLINE",
+    "latencyMetric": "comparable_routing_plus_main_turn_plus_verification_elapsed_seconds",
+    "creditGoal": {
+      "minReductionPercentInAtLeastOneScenario": 5,
+      "maxCreditRegressionPercentPerScenario": 3,
+      "maxLatencyRegressionPercentPerScenario": 5
+    },
+    "latencyGoal": {
+      "minReductionPercentInAtLeastOneScenario": 5,
+      "minReductionSecondsInTheSameScenario": 30,
+      "maxLatencyRegressionPercentPerScenario": 3,
+      "maxCreditRegressionPercentPerScenario": 3
+    },
+    "correctnessOrRobustnessGoal": {
+      "requiresIndependentGeneralRegressionFailingIncumbentPassingCandidate": true,
+      "maxCreditRegressionPercentPerScenario": 5,
+      "maxLatencyRegressionPercentPerScenario": 5,
+      "claim": "contract_or_quality_improvement_not_token_savings"
+    },
+    "maxAdditionalJevUsdPerScenarioRun": 0.01,
+    "maxCumulativeCreditRegressionVsCampaignOriginPercentPerScenario": 5,
+    "maxCumulativeLatencyRegressionVsCampaignOriginPercentPerScenario": 5,
+    "rawCrossProviderTokenSumIsCost": false,
+    "p95FromTwoRunsAllowed": false,
+    "automaticTimeToMoneyTradeoff": false
+  },
+  "screenAndConfirm": {
+    "screen": "one_new_candidate_JAR_run_per_scenario_against_existing_compatible_incumbent_evidence",
+    "promotionRequires": "screen_pass_plus_one_predeclared_contemporary_incumbent_vs_candidate_confirmation_pair_per_scenario",
+    "confirmationNewTurnsForTwoScenarios": 4,
+    "freezeOrderBeforeResults": "soft_incumbent_then_candidate_hard_candidate_then_incumbent_or_reverse_recorded_before_execution",
+    "useAllScheduledCompletedRuns": true,
+    "requireImprovementDirectionInScreenAndConfirmation": true,
+    "requireGoalThresholdInConfirmationAndPerVersionMeanAcrossScheduledEvidence": true,
+    "claimAfterPromotion": "ACCEPTED_DEV_LIMITED_EVIDENCE",
+    "smallOrMixedResults": "INCONCLUSIVE_KEEP_INCUMBENT",
+    "rerunUntilPass": false
+  },
+  "budget": {
+    "maxCandidateInterventions": 5,
+    "maxNewMainModelTurnsTotal": 20,
+    "maxNewNoJarControlTurns": 0,
+    "maxJevHttpRequestsTotal": 2000,
+    "maxJevInputTokensTotal": 10000000,
+    "maxJevUsdTotal": 1,
+    "campaignWallTimeHours": 6,
+    "perMainTurnMinutes": 45,
+    "maxInfrastructureRetriesPerCondition": 1,
+    "retryAfterMaterialFixOnly": true,
+    "countAllStartedOrPossiblySubmittedModelTurns": true,
+    "implementationAgentConsumption": "separate_and_unknown_unless_platform_reports_it",
+    "onExhaustion": "CHECKPOINT_AND_KEEP_LAST_ACCEPTED"
+  },
+  "priceSnapshots": {
+    "asOf": "2026-10-02",
+    "jev": {
+      "model": "jev-1.13.0",
+      "inputUsdPerMillion": 0.042,
+      "outputUsdPerMillion": 0,
+      "source": "https://docs.typesafe.ai/models",
+      "mustVerifyApplicabilityBeforeLive": true
+    },
+    "codexPublishedCreditEstimate": {
+      "model": "gpt-5.6-sol",
+      "regularModeCreditsPerMillionUncachedInput": 125,
+      "regularModeCreditsPerMillionCachedInput": 12.5,
+      "regularModeCreditsPerMillionOutput": 750,
+      "source": "https://learn.chatgpt.com/docs/pricing",
+      "mustVerifyExactModelModeAndAccountApplicability": true,
+      "weeklyAllowancePercentageConversion": null,
+      "creditsToUsd": null
+    }
+  },
+  "scope": {
+    "mainModelAndEffort": "inherit_frozen_scenario_protocol_no_substitution",
+    "jevModel": "pin_current_verified_resolved_version_no_alias_drift",
+    "m7ActiveFiltering": "PROHIBITED_IN_THIS_CAMPAIGN",
+    "frozenBenchmarkEdits": "PROHIBITED",
+    "resultOrBaselineDeletion": "PROHIBITED",
+    "productionChanges": "only_one_predeclared_active_mechanism_per_candidate",
+    "localCampaignCommits": "ALLOWED",
+    "push": "NOT_AUTHORIZED",
+    "mainIntegration": "fast_forward_only_after_validation_and_only_if_main_unchanged_clean"
+  }
+}

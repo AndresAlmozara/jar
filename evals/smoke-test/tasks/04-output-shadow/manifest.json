@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "jar.owned-workspace.v1",
+  "id": "04-output-shadow",
+  "sourceRoot": "workspace",
+  "task": "Correct failure summarization so the first error code, final retry decision, and artifact path are preserved while successful progress remains unchanged. Run public tests. Output filtering is evaluated only in shadow and must not alter live tool delivery.",
+  "include": [
+    "package.json",
+    "public-test.mjs",
+    "src/distractors/logging-01.js",
+    "src/distractors/logging-02.js",
+    "src/distractors/logging-03.js",
+    "src/distractors/logging-04.js",
+    "src/distractors/logging-05.js",
+    "src/distractors/logging-06.js",
+    "src/distractors/logging-07.js",
+    "src/distractors/logging-08.js",
+    "src/distractors/logging-09.js",
+    "src/distractors/logging-10.js",
+    "src/distractors/logging-11.js",
+    "src/distractors/logging-12.js",
+    "src/log/summary.js",
+    "tests/summary.test.mjs"
+  ],
+  "exclude": [
+    ".git",
+    ".jar",
+    "node_modules",
+    "coverage",
+    "dist",
+    "build"
+  ],
+  "immutable": [
+    "package.json",
+    "public-test.mjs"
+  ],
+  "limits": {
+    "maxFiles": 200,
+    "maxFileBytes": 65536,
+    "maxTotalBytes": 4194304
+  },
+  "commands": {
+    "test": {
+      "argv": [
+        "node",
+        "public-test.mjs"
+      ],
+      "timeoutMs": 15000,
+      "maxOutputBytes": 8192
+    }
+  },
+  "surfaces": [
+    "capabilities",
+    "output-shadow"
+  ],
+  "capabilityProfile": "smoke-expanded",
+  "verifier": {
+    "root": "verifier",
+    "entrypoint": "verify.mjs"
+  }
+}

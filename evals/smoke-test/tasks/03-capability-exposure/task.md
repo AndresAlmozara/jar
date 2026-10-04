@@ -1,0 +1,1 @@
+Fix configuration merging so explicit false and zero values override defaults, nested retry settings merge without mutating either input, and unknown top-level keys remain rejected. Add regression coverage and run public tests. Use only capabilities relevant to this reviewed workspace.

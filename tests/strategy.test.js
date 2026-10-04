@@ -1,0 +1,3 @@
+import test from "node:test"; import assert from "node:assert/strict"; import { DeterministicDecisionEngine, ShadowRoutingStrategy } from "../packages/core/src/index.js";
+test("deterministic engine is offline",async()=>{const e=new DeterministicDecisionEngine({choice:async()=>({choice:"x",confidence:1})});assert.equal((await e.choice({})).choice,"x")});
+test("shadow strategy emits common proposal contract",async()=>{const s=new ShadowRoutingStrategy("skill/test",async()=>({component:"skills",candidates:[{id:"a"}],decision:{selected:["a"]}}));const p=await s.propose({task:{id:"t",text:"x"},catalog:{}});assert.equal(p.strategy,"skill/test");assert.equal(p.taskId,"t")});

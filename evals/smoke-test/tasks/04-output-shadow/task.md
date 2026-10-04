@@ -1,0 +1,1 @@
+Correct failure summarization so the first error code, final retry decision, and artifact path are preserved while successful progress remains unchanged. Run public tests. Output filtering is evaluated only in shadow and must not alter live tool delivery.

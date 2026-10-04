@@ -1,0 +1,7 @@
+{
+  "mustKeepMarkers": [
+    "ERROR E_CONN upstream connection reset",
+    "WARN retry=no",
+    "ARTIFACT artifacts/final-diagnostic.json"
+  ]
+}
