@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/visuals/assets/jar-readme-header.png" alt="JAR — JEV Agentic Router" width="100%">
+</p>
+
 # JEV Agentic Router (JAR)
 
 [![CI](https://github.com/AndresAlmozara/jar/actions/workflows/ci.yml/badge.svg)](https://github.com/AndresAlmozara/jar/actions/workflows/ci.yml)
