@@ -149,5 +149,5 @@ async function main(){
   }
   usage(); process.exitCode=2;
 }
-main().catch((e)=>{if(e instanceof ChatGptAuthError){console.error(e.code);if(e.diagnostics)console.error(JSON.stringify({oauthDiagnostics:e.diagnostics},null,2));}
+main().catch((e)=>{if(e instanceof ChatGptAuthError){console.error(e.code);}
   else console.error(e.stack||e.message||String(e));process.exitCode=1});
