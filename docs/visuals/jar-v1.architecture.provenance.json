@@ -1,0 +1,41 @@
+{
+  "schema": "jar-v1-architecture-provenance-v1",
+  "diagram_type": "architecture",
+  "source_commit": "9242242c89b90ee44741a17ef659e2e187198c67",
+  "updated_date": "2026-10-04",
+  "archify_version": "3.0.1",
+  "quality": "showcase",
+  "hashes": {
+    "spec_sha256": "6b2f843f2f4af7b7ac7103530454372aeaf91d10668f5e071a0a4d343ab79227",
+    "artifact_sha256": "2ab1439c100bcde223571640fb12b1e8c8282c76dad0843a7580b2550a5e400c",
+    "hero_svg_sha256": "f76a109034c4404b4d4f1f64a35e34e049d3e884b69b9242fbc93008964c1050",
+    "hero_png_sha256": "a8949f1d3af15c265b4c061e3b156e6945c9dfb9baa258e0eaebdba20ed4da18",
+    "share_card_sha256": "0a4f2407d8c4801f3870681c3691ad08179e8b7db7c633bb4b24597392560451"
+  },
+  "validation": {
+    "score": "9/9",
+    "status": "pass",
+    "errors": 0,
+    "warnings": 0,
+    "proper_crossings": 0,
+    "resolved_crossovers": 0,
+    "ambiguous_corridors": 0,
+    "detours": 0
+  },
+  "browser_evidence": {
+    "status": "pass",
+    "themes": ["dark", "light"],
+    "desktop_viewports": ["1440x900", "1600x1000", "1920x1080", "2048x1320"]
+  },
+  "visual_review": {
+    "status": "not_requested",
+    "inspected_captures": [],
+    "correction_rounds": 0
+  },
+  "static_export": {
+    "basis": "validated Archify-rendered composition",
+    "hero_theme": "dark",
+    "share_card_size": "1200x630"
+  },
+  "source_backed": true
+}

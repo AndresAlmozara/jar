@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "JAR V1 — System Architecture",
+    "subtitle": "Deterministic authority surrounds and constrains bounded semantic judgment",
+    "output": "docs/visuals/jar-v1.architecture.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/AndresAlmozara/jar.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "9242242c89b90ee44741a17ef659e2e187198c67"
+    },
+    "views": [
+      {
+        "id": "primary-request",
+        "label": "Primary request path",
+        "focus": ["host", "runtime-adapter", "jar-router", "model-tools"],
+        "note": "A host request is normalized, routed, and handed to the host-owned coding model and tools."
+      },
+      {
+        "id": "authority-envelope",
+        "label": "Authority envelope",
+        "focus": ["jar-router", "m5", "m6", "semantic-judgment", "m8"],
+        "note": "Identity, eligibility, policy, materialization, and verification remain deterministic."
+      },
+      {
+        "id": "passive-observation",
+        "label": "Passive observation",
+        "focus": ["runtime-adapter", "m7", "telemetry"],
+        "note": "Receipts and telemetry observe product behavior without authorizing it."
+      }
+    ],
+    "legend": {
+      "mode": "all",
+      "entries": {
+        "frontend": {"label": "Runtime boundary"},
+        "backend": {"label": "Routing module"},
+        "database": {"label": "Evidence / telemetry"},
+        "cloud": {"label": "Bounded judgment"},
+        "security": {"label": "Deterministic authority"},
+        "messagebus": {"label": "Passive observation"},
+        "external": {"label": "Host / external system"}
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "host",
+      "type": "external",
+      "label": "User Task · Coding Host",
+      "sublabel": "task · runtime observations · permission policy",
+      "pos": [20, 40],
+      "size": [182, 84],
+      "sources": [
+        {"path": "README.md", "line": 7, "end_line": 12, "label": "host and model boundary"},
+        {"path": "docs/ARCHITECTURE.md", "line": 106, "end_line": 116, "label": "runtime authority"}
+      ]
+    },
+    {
+      "id": "runtime-adapter",
+      "type": "frontend",
+      "label": "Runtime Adapter Boundary",
+      "sublabel": "observe · translate · materialize · restore",
+      "tag": "Codex primary",
+      "pos": [20, 220],
+      "size": [190, 84],
+      "sources": [
+        {"path": "packages/runtime-adapters/codex/src/daily-driver.js", "line": 152, "end_line": 176, "label": "hook lifecycle"},
+        {"path": "packages/runtime-adapters/src/contracts.js", "line": 176, "end_line": 209, "label": "adapter plan boundary"},
+        {"path": "docs/ARCHITECTURE.md", "line": 106, "end_line": 116, "label": "neutral adapter contract"}
+      ]
+    },
+    {
+      "id": "jar-router",
+      "type": "security",
+      "label": "JAR V1 System-1 Router",
+      "sublabel": "identity · eligibility · policy · materialization · verification",
+      "tag": "not an autonomous coding agent",
+      "pos": [475, 220],
+      "size": [240, 96],
+      "sources": [
+        {"path": "README.md", "line": 14, "end_line": 18, "label": "canonical product"},
+        {"path": "docs/ARCHITECTURE.md", "line": 14, "end_line": 36, "label": "responsibility split"},
+        {"path": "packages/core/src/treatments.js", "line": 3, "end_line": 13, "label": "explicit V1 registry"}
+      ]
+    },
+    {
+      "id": "m5",
+      "type": "backend",
+      "label": "M5 — Skill Routing",
+      "sublabel": "ECC identities + deterministic lexical selection",
+      "tag": "skill/ecc-native-v1",
+      "pos": [310, 40],
+      "size": [190, 84],
+      "sources": [
+        {"path": "packages/skill-routing/src/ecc-native.js", "line": 38, "end_line": 50, "label": "canonical strategy"},
+        {"path": "packages/skill-routing/src/common.js", "line": 32, "end_line": 55, "label": "explicit requests"},
+        {"path": "packages/runtime-adapters/codex/src/daily-driver.js", "line": 106, "end_line": 114, "label": "materialization"}
+      ]
+    },
+    {
+      "id": "m6",
+      "type": "database",
+      "label": "M6 — Repository Context",
+      "sublabel": "bounded retrieval + source-hash recheck",
+      "tag": "context/deterministic-v1",
+      "pos": [640, 40],
+      "size": [210, 84],
+      "sources": [
+        {"path": "packages/repository-context/src/deterministic.js", "line": 6, "end_line": 18, "label": "deterministic selection"},
+        {"path": "packages/repository-context/src/candidates.js", "line": 12, "end_line": 31, "label": "bounded retrieval"},
+        {"path": "packages/runtime-adapters/codex/src/daily-driver.js", "line": 90, "end_line": 98, "label": "freshness verification"}
+      ]
+    },
+    {
+      "id": "semantic-judgment",
+      "type": "cloud",
+      "label": "Bounded TypeSafe/JEV Proposal",
+      "sublabel": "task-need judgment only; never permissions or execution",
+      "tag": "configured paths only",
+      "pos": [650, 540],
+      "size": [210, 92],
+      "sources": [
+        {"path": "packages/capability-exposure/src/hierarchical-cover.js", "line": 96, "end_line": 139, "label": "bounded Noul questions"},
+        {"path": "packages/capability-exposure/src/hierarchical-cover.js", "line": 196, "end_line": 234, "label": "conservative cover"},
+        {"path": "packages/decision-providers/jev/src/jev-decision-engine.js", "line": 28, "end_line": 67, "label": "normalized primitives"}
+      ]
+    },
+    {
+      "id": "m8",
+      "type": "backend",
+      "label": "M8 — Capability Exposure",
+      "sublabel": "eligibility first · independent policy recheck",
+      "tag": "causal only with complete inventory",
+      "pos": [640, 400],
+      "size": [230, 92],
+      "sources": [
+        {"path": "packages/capability-exposure/src/eligibility.js", "line": 3, "end_line": 31, "label": "hard-fact eligibility"},
+        {"path": "packages/capability-exposure/src/policy-gate.js", "line": 5, "end_line": 38, "label": "independent policy"},
+        {"path": "packages/runtime-adapters/codex/src/daily-driver.js", "line": 65, "end_line": 74, "label": "complete-profile gate"}
+      ]
+    },
+    {
+      "id": "model-tools",
+      "type": "external",
+      "label": "Main Coding Model + Tools",
+      "sublabel": "host owns permissions · execution · final verification",
+      "tag": "outside JAR authority",
+      "pos": [475, 700],
+      "size": [250, 96],
+      "sources": [
+        {"path": "docs/ARCHITECTURE.md", "line": 26, "end_line": 36, "label": "execution boundary"},
+        {"path": "docs/ARCHITECTURE.md", "line": 106, "end_line": 116, "label": "Codex authority"},
+        {"path": "packages/runtime-adapters/codex/src/daily-driver.js", "line": 139, "end_line": 146, "label": "tool hook boundary"}
+      ]
+    },
+    {
+      "id": "m7",
+      "type": "messagebus",
+      "label": "M7 — Fresh Output Shadow",
+      "sublabel": "observe a copy; original bytes pass through exactly",
+      "tag": "no causal pruning",
+      "pos": [475, 880],
+      "size": [250, 92],
+      "sources": [
+        {"path": "docs/ARCHITECTURE.md", "line": 55, "end_line": 58, "label": "canonical M7"},
+        {"path": "packages/output-filtering/src/shadow-tournament.js", "line": 19, "end_line": 32, "label": "observation only"},
+        {"path": "packages/runtime-adapters/codex/src/daily-driver.js", "line": 146, "end_line": 146, "label": "exact-pass observation"}
+      ]
+    },
+    {
+      "id": "telemetry",
+      "type": "database",
+      "label": "Receipts + Passive Telemetry",
+      "sublabel": "local spool · checksummed chunks · deterministic reports",
+      "tag": "never an authorization input",
+      "pos": [20, 880],
+      "size": [280, 104],
+      "sources": [
+        {"path": "packages/runtime-adapters/codex/src/daily-driver.js", "line": 147, "end_line": 175, "label": "receipts and emission"},
+        {"path": "packages/telemetry/src/recorder.js", "line": 39, "end_line": 61, "label": "best-effort local spool"},
+        {"path": "packages/telemetry/src/maintenance.js", "line": 31, "end_line": 58, "label": "validated chunks"}
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "DETERMINISTIC AUTHORITY — constrains bounded semantic judgment",
+      "wraps": ["jar-router", "m5", "m6", "semantic-judgment", "m8"],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "RUNTIME ADAPTER BOUNDARY",
+      "wraps": ["runtime-adapter"],
+      "pad": 18
+    }
+  ],
+  "connections": [
+    {
+      "id": "request-to-adapter",
+      "from": "host",
+      "to": "runtime-adapter",
+      "label": "task",
+      "variant": "emphasis"
+    },
+    {
+      "id": "adapter-to-router",
+      "from": "runtime-adapter",
+      "to": "jar-router",
+      "label": "normalize observations",
+      "variant": "emphasis"
+    },
+    {
+      "id": "router-to-model",
+      "from": "jar-router",
+      "to": "model-tools",
+      "label": "model-visible context",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m5-to-router",
+      "from": "m5",
+      "to": "jar-router",
+      "label": "verified skill guidance"
+    },
+    {
+      "id": "m6-to-router",
+      "from": "m6",
+      "to": "jar-router",
+      "label": "repository evidence"
+    },
+    {
+      "id": "router-to-m8",
+      "from": "jar-router",
+      "to": "m8",
+      "label": "identity-bound inventory"
+    },
+    {
+      "id": "semantic-to-m8",
+      "from": "semantic-judgment",
+      "to": "m8",
+      "label": "PROPOSAL ONLY",
+      "variant": "dashed"
+    },
+    {
+      "id": "model-to-m7",
+      "from": "model-tools",
+      "to": "m7",
+      "label": "tool output copy",
+      "variant": "dashed"
+    },
+    {
+      "id": "adapter-to-telemetry",
+      "from": "runtime-adapter",
+      "to": "telemetry",
+      "label": "receipts + metadata",
+      "variant": "dashed"
+    },
+    {
+      "id": "m7-to-telemetry",
+      "from": "m7",
+      "to": "telemetry",
+      "label": "passive only",
+      "variant": "dashed"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "Authority split",
+      "items": [
+        "DETERMINISTIC AUTHORITY surrounds bounded semantic judgment.",
+        "JEV proposes bounded need/relevance judgments; it never decides permissions, inventory truth, execution, policy, or verification.",
+        "The host and its permission system remain authoritative for tool execution."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Canonical V1 profile",
+      "items": [
+        "JAR invokes M5 and M6; their verified guidance and repository evidence contribute to the routed context.",
+        "M5: ECC-native deterministic skill routing.",
+        "M6: deterministic bounded repository retrieval with provenance.",
+        "M7: exact-pass-through Shadow observation; no causal pruning.",
+        "M8: hierarchical cover contract; causal only for complete, identity-bound inventories."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Unknown stays unknown",
+      "items": [
+        "Incomplete inventories are observational and never become an implicit deny.",
+        "Provider failure cannot widen the independently policy-eligible set.",
+        "Configuration, proposal, materialization, execution, and verification remain distinct evidence."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Passive observability",
+      "items": [
+        "Adapters emit allowlisted metadata and correlation IDs to a local atomic spool.",
+        "Maintenance deduplicates, checksum-verifies, aggregates, and reports deterministically.",
+        "Telemetry failures are non-authoritative and do not change an otherwise valid route."
+      ]
+    }
+  ]
+}
